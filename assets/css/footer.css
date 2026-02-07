@@ -26,6 +26,10 @@
     color: #e0e0e0;
 }
 
+.social-icons {
+    margin-top: 15px;
+}
+
 .social-icons a {
     display: inline-flex;
     justify-content: center;
