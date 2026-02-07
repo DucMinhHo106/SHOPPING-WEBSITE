@@ -1,0 +1,29 @@
+.auth-modal .modal-content {
+    border-radius: 0;
+    padding: 20px;
+}
+
+.auth-title {
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.auth-divider {
+    border-right: 1px solid #ddd;
+}
+
+.btn-auth {
+    background-color: #3f5d85;
+    color: #fff;
+    padding: 8px 20px;
+    border: none;
+}
+
+.btn-auth:hover {
+    background-color: #324a6d;
+}
+
+.form-note {
+    font-size: 14px;
+    color: #666;
+}
