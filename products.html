@@ -1,80 +1,198 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
+
 <head>
     <meta charset="UTF-8">
+    <title>Akko | Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products</title>
-    <link rel="stylesheet" href="/assets/css/navbar.css">
-    <link rel="stylesheet" href="/assets/css/products.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="./assets/css/home.css">
+    <link rel="stylesheet" href="./assets/css/navbar.css">
+    <link rel="stylesheet" href="./assets/css/footer.css">
+    <link rel="stylesheet" href="./assets/css/products.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./assets/css/auth-modal.css">
 </head>
 
 <body>
+    <!-- HEADER - NAVBAR -->
+    <nav class="navbar bg-white shadow">
+        <div class="container header-container">
+            <!-- LOGO -->
 
-    <!-- HEADER -->
-    <header>
-        
-    </header>
+            <div class="header-logo">
+                <a href="./index.html">
+                    <img src="./assets/images/logo.png" alt="Akko Logo" style="height: 50px;">
+                </a>
+            </div>
+            <!-- SEARCHING -->
+            <div class="header-search">
+                <input type="text" placeholder="Tìm kiếm sản phẩm">
+                <!-- <img class="search-icon" src="../assets/images/kinhlup.jpg" alt=""> -->
 
-    <!-- NAVBAR -->
-    <nav>
-        
+            </div>
+
+            <!-- MENU -->
+            <ul class="header-menu">
+                <li><a href="./products.html#keyboard">KEYBOARD</a></li>
+                <li><a href="./products.html#kit_ban_phim">KIT BÀN PHÍM</a></li>
+                <li><a href="./products.html#mouse">MOUSE</a></li>
+                <li><a href="./products.html#keycap">KEYCAP</a></li>
+                <li><a href="./products.html#switch">SWITCH</a></li>
+                <li><a href="./products.html#phu_kien">PHỤ KIỆN</a></li>
+                <li><a href="#">TIN TỨC</a></li>
+                <li class="menu-dropdown">
+                    <a href="#">HỖ TRỢ <i class="bi bi-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Driver Tải về</a></li>
+                        <hr>
+                        <li><a href="#">Kiểm tra bảo hành</a></li>
+                        <hr>
+                        <li><a href="#">Hướng dẫn bảo hành</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="header-right">
+                <a href="#" class="login-link" data-bs-toggle="modal" data-bs-target="#authModal">
+                    | ĐĂNG NHẬP
+                </a>
+                <a href="#" class="cart-icon">
+                    <img src="./assets/icons/cart.jpg" alt="Cart">
+                </a>
+            </div>
+
+        </div>
     </nav>
 
-    <!-- MAIN CONTENT -->
-    <main>
-        <section class="product-section">
-            <div class="sidebar-menu">
-                <ul class="sidebar-menu-list">
-                    <li class="sidebar-menu-item"><a href="#">KeyBoard</a></li>
-                    <li class="sidebar-menu-item"><a href="#">Kit Bàn Phím</a></li>
-                    <li class="sidebar-menu-item"><a href="#">Switch</a></li>
-                    <li class="sidebar-menu-item"><a href="#">Keycap</a></li>
-                    <li class="sidebar-menu-item"><a href="#">Mouse</a></li>
-                    <li class="sidebar-menu-item"><a href="#">Phụ kiện</a></li>
-                </ul>
-            </div>
+    <div class="products-wrapper">
 
-            <div class="product-list">
-                <div class="product-item">
-                    <a href="/products.html"> <img src="./images/keyboard/keyboard3068.jpg"></a>
-                    <h4><a href="/products.html">Bàn phím cơ AKKO 3068B Plus Blue on White (Bluetooth 5.0 / Wireless
-                            2.4Ghz / Hotswap
-                            / Foam tiêu
-                            âm / AKKO CS Jelly Sw)</a></h4>
-                    <p class="price">2.990.000₫</p>
-                </div>
-                <div class="product-item">
-                    <img src="./images/keyboard/keyboard5087white.jpg">
-                    <h4><a href="/products.html">Bàn phím AKKO 5087 RGB ASA – White (Foam tiêu âm / Hotswap / AKKO CS
-                            Jelly
-                            switch)</a></h4>
-                    <p class="price">3.490.000₫</p>
-                </div>
-                <div class="product-item">
-                    <img src="./images/keyboard/keyboard3087.jpg">
-                    <h4><a href="/products.html">Bàn phím cơ AKKO 3087 RF Matcha Red Bean (2.4Ghz / AKKO sw v3)</a></h4>
-                    <p class="price">1.389.000₫</p>
-                </div>
-
-                <div class="product-item">
-                    <img src="./images/mouse/mouseag.jpg">
-                    <h4><a href="/products.html">Chuột gaming AKKO – AG One 8K Joy Of Life (Cảm biến PAW3395 / 8K polling
-                            rate / Multi-modes)</a></h4>
-                    <p class="price">1.290.000₫</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- ASIDE -->
-        <aside>
-            
+        <!-- SIDEBAR -->
+        <aside class="products-sidebar">
+            <a href="#keyboard" class="sidebar-item active">Keyboard</a>
+            <a href="#kit" class="sidebar-item">KIT bàn phím</a>
+            <a href="#keycap" class="sidebar-item">Keycap</a>
+            <a href="#switch" class="sidebar-item">Switch</a>
+            <a href="#mouse" class="sidebar-item">Mouse</a>
+            <a href="#phukien" class="sidebar-item">Phụ kiện</a>
         </aside>
-    </main>
+
+        <!-- CONTENT -->
+        <main class="products-content">
+
+            <section id="keyboard" class="product-section">
+                <h2>Keyboard</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="assets/images/keyboard1.png">
+                        <p>Bàn phím cơ AKKO 5075</p>
+                        <span>1.190.000đ</span>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="assets/images/keyboard2.png">
+                        <p>Bàn phím cơ AKKO Ray68</p>
+                        <span>1.750.000đ</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="kit" class="product-section">
+                <h2>KIT bàn phím</h2>
+            </section>
+
+            <section id="keycap" class="product-section">
+                <h2>Keycap</h2>
+            </section>
+
+            <section id="switch" class="product-section">
+                <h2>Switch</h2>
+            </section>
+
+            <section id="mouse" class="product-section">
+                <h2>Mouse</h2>
+            </section>
+
+            <section id="phukien" class="product-section">
+                <h2>Phụ kiện</h2>
+            </section>
+
+        </main>
+    </div>
 
     <!-- FOOTER -->
-    <footer>
-        
+
+    <footer class="footer mt-5">
+        <div class="container py-5">
+            <div class="row">
+
+                <!-- Cột 1 -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="footer-title">AKKO GEAR VIỆT NAM</h5>
+                    <p class="footer-text">
+                        AKKO.VN cung cấp các sản phẩm phân phối chính hãng tại Việt Nam
+                    </p>
+                    <div class="social-icons">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-envelope"></i></a>
+                        <a href="#"><i class="bi bi-pinterest"></i></a>
+                    </div>
+                </div>
+
+                <!-- Cột 2 -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="footer-title">THÔNG TIN MỚI</h5>
+
+                    <div class="news-item">
+                        <span class="date-box"><strong>10</strong><br>Th2</span>
+                        <p>Hướng dẫn sử dụng <br> bàn phím cơ AKKO 3098B và 3098N</p>
+                    </div>
+
+                    <div class="news-item">
+                        <span class="date-box"><strong>29</strong><br>Th5</span>
+                        <p>Tìm hiểu về Akko switch CS</p>
+                    </div>
+
+                    <div class="news-item">
+                        <span class="date-box"><strong>23</strong><br>Th9</span>
+                        <p>Tổng hợp driver bàn phím và chuột Akko</p>
+                    </div>
+                </div>
+
+                <!-- Cột 3 -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="footer-title">TAGS</h5>
+                    <div class="tag-list">
+                        <a href="#">3068B</a>
+                        <a href="#">3084</a>
+                        <a href="#">3087S</a>
+                        <a href="#">3098S</a>
+                        <a href="#">AKKO</a>
+                        <a href="#">RGB</a>
+                        <a href="#">Tokyo</a>
+                        <a href="#">MONET</a>
+                    </div>
+                </div>
+
+                <!-- Cột 4 -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="footer-title">NHẬN EMAIL TỪ AKKO</h5>
+                    <input type="email" class="form-control mb-2" placeholder="Email của bạn">
+                    <button class="btn btn-dark w-100">Đăng ký</button>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="footer-bottom text-center py-3">
+            Copyright 2026 © Akko.vn
+        </div>
     </footer>
 
 </body>
+
 </html>
