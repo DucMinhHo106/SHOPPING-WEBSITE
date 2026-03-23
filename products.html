@@ -70,60 +70,124 @@
     <div class="products-wrapper">
 
         <!-- SIDEBAR -->
-        <aside class="products-sidebar">
-            <a href="#keyboard" class="sidebar-item active">Keyboard</a>
-            <a href="#kit" class="sidebar-item">KIT bàn phím</a>
-            <a href="#keycap" class="sidebar-item">Keycap</a>
-            <a href="#switch" class="sidebar-item">Switch</a>
-            <a href="#mouse" class="sidebar-item">Mouse</a>
-            <a href="#phukien" class="sidebar-item">Phụ kiện</a>
+        <aside class="sidebar">
+            <div class="sidebar-title">
+                <span>Danh mục sản phẩm</span>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="menu-item">
+                    <input type="checkbox" id="menu-keyboard" class="menu-toggle" />
+                    <label for="menu-keyboard" class="menu-label">
+                        <span class="menu-icon"> Keyboard </span>
+                        <i class="bi bi-chevron-down chevron"></i>
+                    </label>
+                    <ul class="sub-menu">
+                        <li class="sub-menu-item">
+                            <input type="checkbox" id="menu-theme" class="menu-toggle sub-menu-toggle" />
+                            <label for="menu-theme" class="sub-menu-label">
+                                Chủ đề
+                                <i class="bi bi-chevron-down chevron" style="font-size: 11px"></i>
+                            </label>
+                            <ul class="sub-sub-menu">
+                                <li>
+                                    <a href="https://akko.vn/acrylic/">ACRYLIC</a>
+                                </li>
+                                <li>
+                                    <a href="https://akko.vn/black-pink/">Black Pink</a>
+                                </li>
+                                <li>
+                                    <a href="https://akko.vn/bilibili/">BiliBili</a>
+                                </li>
+                                <li>
+                                    <a href="https://akko.vn/dragon-ball-super/">Dragon Ball Super</a>
+                                </li>
+                                <li>
+                                    <a href="https://akko.vn/dragon-ball-z/">Dragon Ball Z</a>
+                                </li>
+                                <li>
+                                    <a href="https://akko.vn/ma-honkai-impact-iii/">Mã Honkai Impact
+                                        III</a>
+                                </li>
+                                <li>
+                                    <a href="https://akko.vn/mod-series/">MOD Series</a>
+                                </li>
+                                <li>
+                                    <a href="https://akko.vn/ma-midnight/">Mã Midnight</a>
+                                </li>
+                                <li>
+                                    <a href="https://akko.vn/matcha-red-bean/">Matcha Red Bean</a>
+                                </li>
+                                <li>
+                                    <a href="https://akko.vn/monets-pond/">Monet's Pond</a>
+                                </li>
+                                <li><a href="https://akko.vn/mojike/">Mojike</a></li>
+                                <li>
+                                    <a href="https://akko.vn/ma-ocean/">Mã Ocean</a>
+                                </li>
+                                <li>
+                                    <a href="https://akko.vn/pc-series/">PC Series</a>
+                                </li>
+                                <li>
+                                    <a href="https://akko.vn/one-piece/">One Piece</a>
+                                </li>
+                                <li>
+                                    <a href="https://akko.vn/horizon/">Horizon</a>
+                                </li>
+                                <li><a href="https://akko.vn/silent/">Silent</a></li>
+                                <li>
+                                    <a href="https://akko.vn/steam-engine/">Steam Engine</a>
+                                </li>
+                                <li>
+                                    <a href="https://akko.vn/world-tour-tokyo/">World Tour Tokyo</a>
+                                </li>
+                                <li>
+                                    <a href="https://akko.vn/world-tour-tokyo-r2/">World Tour Tokyo
+                                        R2</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="sub-menu-item">
+                            <input type="checkbox" id="menu-led" class="menu-toggle sub-menu-toggle" />
+                            <label for="menu-led" class="sub-menu-label">
+                                Kết nối &amp; Led
+                                <i class="bi bi-chevron-down chevron" style="font-size: 11px"></i>
+                            </label>
+                            <ul class="sub-sub-menu">
+                                <li>
+                                    <a href="https://akko.vn/multi-modes/">Multi-modes</a>
+                                </li>
+                                <li>
+                                    <a href="https://akko.vn/bluetooth/">Bluetooth</a>
+                                </li>
+                                <li>
+                                    <a href="https://akko.vn/led-rgb/">Led RGB</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu-item menu-link">
+                    <a href="https://akko.vn/kit-ban-phim/"> KIT Bàn phím </a>
+                </li>
+                <li class="menu-item menu-link">
+                    <a href="https://akko.vn/key-cap/"> Keycap </a>
+                </li>
+                <li class="menu-item menu-link">
+                    <a href="https://akko.vn/switch/"> Switch </a>
+                </li>
+                <li class="menu-item menu-link">
+                    <a href="https://akko.vn/mouse/"> Mouse </a>
+                </li>
+                <li class="menu-item menu-link">
+                    <a href="https://akko.vn/phu-kien/"> Phụ kiện </a>
+                </li>
+            </ul>
         </aside>
 
-        <!-- CONTENT -->
-        <main class="products-content">
-
-            <section id="keyboard" class="product-section">
-                <h2>Keyboard</h2>
-                <div class="product-grid">
-                    <div class="product-card">
-                        <img src="assets/images/keyboard1.png">
-                        <p>Bàn phím cơ AKKO 5075</p>
-                        <span>1.190.000đ</span>
-                    </div>
-
-                    <div class="product-card">
-                        <img src="assets/images/keyboard2.png">
-                        <p>Bàn phím cơ AKKO Ray68</p>
-                        <span>1.750.000đ</span>
-                    </div>
-                </div>
-            </section>
-
-            <section id="kit" class="product-section">
-                <h2>KIT bàn phím</h2>
-            </section>
-
-            <section id="keycap" class="product-section">
-                <h2>Keycap</h2>
-            </section>
-
-            <section id="switch" class="product-section">
-                <h2>Switch</h2>
-            </section>
-
-            <section id="mouse" class="product-section">
-                <h2>Mouse</h2>
-            </section>
-
-            <section id="phukien" class="product-section">
-                <h2>Phụ kiện</h2>
-            </section>
-
-        </main>
-    </div>
+    <!-- CONTENT -->
+    
 
     <!-- FOOTER -->
-
     <footer class="footer mt-5">
         <div class="container py-5">
             <div class="row">

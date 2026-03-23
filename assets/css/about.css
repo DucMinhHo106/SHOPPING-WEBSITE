@@ -1,0 +1,186 @@
+/* about.css */
+
+.about-page {
+  padding: 24px 0 48px;
+}
+
+main {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+.about-breadcrumb {
+  margin: 0 0 10px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.about-title {
+  margin: 0 0 10px;
+  font-size: 34px;
+  line-height: 1.2;
+}
+
+.about-subtitle {
+  margin: 0 0 22px;
+  max-width: 720px;
+  font-size: 16px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.about-hero {
+  padding: 18px 0 28px;
+}
+
+.about-hero-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.about-hero-card {
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 12px;
+  padding: 16px;
+  background: #fff;
+}
+
+.about-card-title {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+
+.about-card-text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.about-section {
+  padding: 26px 0;
+}
+
+.about-section-title {
+  margin: 0 0 12px;
+  font-size: 22px;
+}
+
+.about-section-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.about-section-block {
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 12px;
+  padding: 18px;
+  background: #fff;
+}
+
+.about-section-text {
+  margin: 0 0 12px;
+  font-size: 14px;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+.about-list {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.about-list-item {
+  margin: 8px 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.about-highlight {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.about-highlight-item {
+  border: 1px dashed rgba(0,0,0,0.18);
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+}
+
+.about-highlight-number {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.about-highlight-label {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+.about-store-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.about-store-card {
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 12px;
+  padding: 16px;
+  background: #fff;
+}
+
+.about-cta {
+  margin-top: 18px;
+}
+
+.about-cta-button {
+  display: inline-block;
+  padding: 12px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  border: 1px solid rgba(0,0,0,0.16);
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .about-hero-grid,
+  .about-store-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-section-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.about-hero-card, .about-section-block, .about-store-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-hero-card:hover, .about-section-block:hover, .about-store-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  border-color: transparent;
+}
+
+.about-cta-button {
+  background-color: #ff3366;
+  color: #fff;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.about-cta-button:hover {
+  background-color: #e60039;
+  transform: scale(1.05);
+}

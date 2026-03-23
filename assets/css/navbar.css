@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: space-between;
     font-size: 12px;
+    width: 100%;
 }
 
 .header-search {
@@ -89,4 +90,10 @@
 .kinhlup img {
     width: 30px;
     height: auto;
+}
+
+#header-right {
+    align-items: center;
+    display: flex;
+    gap: 12px;
 }
