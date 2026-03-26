@@ -238,24 +238,20 @@ function showCategory(category) {
     const section = document.getElementById(category);
     if (!section) return;
 
-    // thêm class để CSS xử lý grid
     section.classList.add('active');
 
-    // fallback (phòng trường hợp CSS chưa ăn)
+    // fallback 
     section.style.display = 'grid';
     section.style.gridTemplateColumns = "repeat(4, 1fr)";
     section.style.gap = "16px";
 
-    // chỉ render khi chưa có dữ liệu
     if (section.innerHTML.trim() === "") {
         renderProducts(category);
     }
 
-    // update URL (xịn hơn)
     window.location.hash = category;
 }
 
-// load mặc định + hỗ trợ reload vẫn giữ tab
 window.onload = () => {
     const hash = window.location.hash.replace("#", "");
     if (hash && data[hash]) {

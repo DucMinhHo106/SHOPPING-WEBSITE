@@ -1,5 +1,4 @@
 const data = window.openerData || {}; 
-// hoặc copy lại object data của bạn vào đây (cách đơn giản nhất)
 
 function getParam(name) {
     const url = new URL(window.location.href);
