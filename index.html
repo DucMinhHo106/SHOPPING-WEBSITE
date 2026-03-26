@@ -150,19 +150,19 @@
         </section>
         <section class="home-category container">
             <div class="category-list">
-                <a href="./products.html" class="category-item">
+                <a href="./products.html#keyboard" class="category-item">
                     <img src="./assets/images/logokeyboard.png" alt="Keyboard">
                     <h3>KEYBOARD</h3>
                 </a>
-                <a href="./products.html" class="category-item">
+                <a href="./products.html#mouse" class="category-item">
                     <img src="./assets/images/logomouse.png" alt="Mouse">
                     <h3>MOUSE</h3>
                 </a>
-                <a href="./products.html" class="category-item">
+                <a href="./products.html#keycap" class="category-item">
                     <img src="./assets/images/logokeycap.png" alt="Keycap">
                     <h3>KEYCAP</h3>
                 </a>
-                <a href="./products.html" class="category-item">
+                <a href="./products.html#accessories" class="category-item">
                     <img src="./assets/images/logoaccess.png" alt="Accessories">
                     <h3>ACCESSORIES</h3>
                 </a>
@@ -281,67 +281,15 @@
     </main>
 
     <!-- LOGIN / REGISTER MODAL -->
-    <div class="modal fade auth-modal" id="authModal" tabindex="-1">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
+    <div id="auth-container"></div>
 
-                <div class="modal-body">
-                    <div class="row">
-
-                        <!-- ĐĂNG NHẬP -->
-                        <div class="col-md-6 auth-divider">
-                            <h5 class="auth-title">ĐĂNG NHẬP</h5>
-
-                            <div class="mb-3">
-                                <label class="form-label">Tên tài khoản hoặc địa chỉ email *</label>
-                                <input type="text" class="form-control">
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="form-label">Mật khẩu *</label>
-                                <input type="password" class="form-control">
-                            </div>
-
-                            <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input">
-                                <label class="form-check-label">Ghi nhớ mật khẩu</label>
-                            </div>
-
-                            <button class="btn btn-auth mb-3">ĐĂNG NHẬP</button>
-
-                            <div>
-                                <a href="#" style="text-decoration: none">Quên mật khẩu?</a>
-                            </div>
-                        </div>
-
-                        <!-- ĐĂNG KÝ -->
-                        <div class="col-md-6 ps-md-4">
-                            <h5 class="auth-title">ĐĂNG KÝ</h5>
-
-                            <div class="mb-3">
-                                <label class="form-label">Địa chỉ email *</label>
-                                <input type="email" class="form-control">
-                            </div>
-
-                            <p class="form-note">
-                                A password will be sent to your email address.
-                            </p>
-
-                            <p class="form-note">
-                                Tất cả thông tin của bạn chỉ được sử dụng cho việc đặt hàng và cải thiện trải nghiệm sản
-                                phẩm.
-                                Ngoài ra được đảm bảo về quyền riêng tư cá nhân theo quy định pháp luật.
-                            </p>
-
-                            <button class="btn btn-auth">ĐĂNG KÝ</button>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
+    <script>
+        fetch("./auth-modal.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("auth-container").innerHTML = data;
+            });
+    </script>
 
     <!-- FOOTER -->
     <footer class="footer mt-5">

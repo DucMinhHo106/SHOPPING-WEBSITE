@@ -35,12 +35,12 @@
 
             <!-- MENU -->
             <ul class="header-menu">
-                <li><a href="./products.html#keyboard">KEYBOARD</a></li>
-                <li><a href="./products.html#kit_ban_phim">KIT BÀN PHÍM</a></li>
-                <li><a href="./products.html#mouse">MOUSE</a></li>
-                <li><a href="./products.html#keycap">KEYCAP</a></li>
-                <li><a href="./products.html#switch">SWITCH</a></li>
-                <li><a href="./products.html#phu_kien">PHỤ KIỆN</a></li>
+                <li><a href="#" onclick="showCategory('keyboard'); return false;">KEYBOARD</a></li>
+                <li><a href="#" onclick="showCategory('kit_ban_phim'); return false;">KIT BÀN PHÍM</a></li>
+                <li><a href="#" onclick="showCategory('mouse'); return false;">MOUSE</a></li>
+                <li><a href="#" onclick="showCategory('keycap'); return false;">KEYCAP</a></li>
+                <li><a href="#" onclick="showCategory('switch'); return false;">SWITCH</a></li>
+                <li><a href="#" onclick="showCategory('phu_kien'); return false;">PHỤ KIỆN</a></li>
                 <li><a href="./about.html">TIN TỨC</a></li>
                 <li class="menu-dropdown">
                     <a href="#">HỖ TRỢ <i class="bi bi-chevron-down"></i></a>
@@ -67,7 +67,6 @@
     </nav>
 
     <div class="products-wrapper">
-
         <!-- SIDEBAR -->
         <aside class="sidebar">
             <div class="sidebar-title">
@@ -166,26 +165,44 @@
                     </ul>
                 </li>
                 <li class="menu-item menu-link">
-                    <a href="https://akko.vn/kit-ban-phim/"> KIT Bàn phím </a>
+                    <a href="#" onclick="showCategory('kit_ban_phim')">KIT BÀN PHÍM</a>
                 </li>
                 <li class="menu-item menu-link">
-                    <a href="https://akko.vn/key-cap/"> Keycap </a>
+                    <a href="#" onclick="showCategory('keycap')"> Keycap </a>
                 </li>
                 <li class="menu-item menu-link">
-                    <a href="https://akko.vn/switch/"> Switch </a>
+                    <a href="#" onclick="showCategory('switch')"> Switch </a>
                 </li>
                 <li class="menu-item menu-link">
-                    <a href="https://akko.vn/mouse/"> Mouse </a>
+                    <a href="#" onclick="showCategory('mouse')"> Mouse </a>
                 </li>
                 <li class="menu-item menu-link">
-                    <a href="https://akko.vn/phu-kien/"> Phụ kiện </a>
+                    <a href="#" onclick="showCategory('phu_kien')">Phụ kiện</a>
                 </li>
             </ul>
         </aside>
 
+        <main>
+            <div class="product-section" id="keyboard"></div>
+            <div class="product-section" id="kit_ban_phim"></div>
+            <div class="product-section" id="mouse"></div>
+            <div class="product-section" id="keycap"></div>
+            <div class="product-section" id="switch"></div>
+            <div class="product-section" id="phu_kien"></div>
+        </main>
+
     </div>
-    <!-- CONTENT -->
-    
+
+    <!-- LOGIN / REGISTER MODAL -->
+    <div id="auth-container"></div>
+
+    <script>
+        fetch("./auth-modal.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("auth-container").innerHTML = data;
+            });
+    </script>
 
     <!-- FOOTER -->
     <footer class="footer mt-5">
@@ -257,6 +274,7 @@
         </div>
     </footer>
 
+    <script src="./assets/js/products.js"></script>
 </body>
 
 </html>
