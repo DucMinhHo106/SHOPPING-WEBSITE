@@ -1,7 +1,4 @@
-// ============================================================
-//  auth.js  –  Hệ thống đăng ký / đăng nhập cho AKKO Website
-//  Sử dụng localStorage để lưu thông tin người dùng
-// ============================================================
+//  Hệ thống đăng ký / đăng nhập - sử dụng localStorage để lưu thông tin người dùng
 
 const AUTH = {
   USERS_KEY: 'akko_users',
@@ -77,9 +74,7 @@ const AUTH = {
   }
 };
 
-// ============================================================
 //  UI – Cập nhật navbar theo trạng thái đăng nhập
-// ============================================================
 
 function updateNavbar() {
   const session = AUTH.getSession();
@@ -87,7 +82,6 @@ function updateNavbar() {
   if (!loginLink) return;
 
   if (session) {
-    // Hiện tên email rút gọn, bấm vào có thể đăng xuất
     const shortName = session.email.split('@')[0];
     loginLink.innerHTML = `
       <span class="user-greeting">
@@ -104,7 +98,8 @@ function updateNavbar() {
       e.preventDefault();
       AUTH.logout();
     });
-  } else {
+  } 
+  else {
     // Hiện lại nút ĐĂNG NHẬP mở modal
     loginLink.innerHTML = '| ĐĂNG NHẬP';
     loginLink.setAttribute('data-bs-toggle', 'modal');
@@ -112,9 +107,7 @@ function updateNavbar() {
   }
 }
 
-// ============================================================
 //  Gắn sự kiện cho form sau khi auth-modal.html được load xong
-// ============================================================
 
 function initAuthModal() {
 
@@ -133,7 +126,8 @@ function initAuthModal() {
         const modal = bootstrap.Modal.getInstance(document.getElementById('authModal'));
         modal?.hide();
         updateNavbar();
-      } else {
+      } 
+      else {
         errEl.textContent = result.msg;
       }
     });
@@ -152,23 +146,21 @@ function initAuthModal() {
         const modal = bootstrap.Modal.getInstance(document.getElementById('authModal'));
         modal?.hide();
         updateNavbar();
-      } else {
+      } 
+      else {
         errEl.textContent = result.msg;
       }
     });
   }
 }
 
-// ============================================================
 //  Khởi chạy khi trang load
-// ============================================================
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Cập nhật navbar ngay khi trang load (dựa vào localStorage)
+  // Cập nhật navbar ngay khi load xong
   updateNavbar();
 
   // auth-modal được fetch() động trong index.html
-  // Dùng MutationObserver để biết khi nào modal được chèn vào DOM
   const container = document.getElementById('auth-container');
   if (container) {
     const observer = new MutationObserver(() => {
@@ -178,8 +170,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
     observer.observe(container, { childList: true, subtree: true });
-  } else {
-    // Nếu modal đã có sẵn trong trang (không dùng fetch)
+  } 
+  else {
     initAuthModal();
   }
 });
