@@ -3,7 +3,7 @@
     padding: 20px;
 }
 
-.auth-title {
+.auth-modal .auth-title {
     font-weight: 700;
     margin-bottom: 20px;
 }
@@ -12,15 +12,20 @@
     border-right: 1px solid #ddd;
 }
 
-.btn-auth {
+.auth-modal .btn-auth,
+.auth-modal .btn-auth:focus {
     background-color: #3f5d85;
     color: #fff;
     padding: 8px 20px;
     border: none;
+    width: auto;
+    height: auto;
+    font-size: 14px;
 }
 
-.btn-auth:hover {
+.auth-modal .btn-auth:hover {
     background-color: #324a6d;
+    color: #fff;
 }
 
 .form-note {
