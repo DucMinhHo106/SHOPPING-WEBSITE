@@ -1,334 +1,44 @@
 /**
- * product-detail.js
+ * product-detail.js  (refactored)
  * ============================================================
- * Contains ALL product data and the rendering functions that
- * inject them into the empty skeleton in product-detail.html.
+ * Loads ALL content from product-data.json via fetch(), then
+ * renders it into the page skeleton.
  *
  * TO UPDATE CONTENT:
- *   - Change data inside the `product` object below.
- *   - The UI will automatically reflect those changes.
- *   - Never edit product-detail.html to update product info.
+ *   - Edit product-data.json only — never touch this file.
+ *   - Add a new product? Duplicate product-data.json, rename it,
+ *     and point the HTML page to the new file via data-product-src.
+ *
+ * HTML SETUP:
+ *   Place this attribute on your <script> tag so each page can
+ *   point to its own JSON file:
+ *
+ *     <script src="product-detail.js"
+ *             data-product-src="product-data.json" defer></script>
+ *
+ *   If the attribute is omitted, the script falls back to
+ *   "product-data.json" in the same directory.
  * ============================================================
  */
 
-// 1. SIDEBAR DATA
+// 0. RESOLVE JSON PATH
+//    Read from the script tag's data-product-src attribute, or use default.
 
-const sidebarMenu = [
-  {
-    label: "Keyboard",
-    id: "menu-keyboard",
-    children: [
-      {
-        label: "Chủ đề",
-        id: "menu-theme",
-        children: [
-          { label: "ACRYLIC",           href: "https://akko.vn/acrylic/" },
-          { label: "Black Pink",        href: "https://akko.vn/black-pink/" },
-          { label: "BiliBili",          href: "https://akko.vn/bilibili/" },
-          { label: "Dragon Ball Super", href: "https://akko.vn/dragon-ball-super/" },
-          { label: "Dragon Ball Z",     href: "https://akko.vn/dragon-ball-z/" },
-          { label: "Mã Honkai Impact III", href: "https://akko.vn/ma-honkai-impact-iii/" },
-          { label: "MOD Series",        href: "https://akko.vn/mod-series/" },
-          { label: "Mã Midnight",       href: "https://akko.vn/ma-midnight/" },
-          { label: "Matcha Red Bean",   href: "https://akko.vn/matcha-red-bean/" },
-          { label: "Monet's Pond",      href: "https://akko.vn/monets-pond/" },
-          { label: "Mojike",            href: "https://akko.vn/mojike/" },
-          { label: "Mã Ocean",          href: "https://akko.vn/ma-ocean/" },
-          { label: "PC Series",         href: "https://akko.vn/pc-series/" },
-          { label: "One Piece",         href: "https://akko.vn/one-piece/" },
-          { label: "Horizon",           href: "https://akko.vn/horizon/" },
-          { label: "Silent",            href: "https://akko.vn/silent/" },
-          { label: "Steam Engine",      href: "https://akko.vn/steam-engine/" },
-          { label: "World Tour Tokyo",  href: "https://akko.vn/world-tour-tokyo/" },
-          { label: "World Tour Tokyo R2", href: "https://akko.vn/world-tour-tokyo-r2/" },
-        ],
-      },
-      {
-        label: "Kết nối & Led",
-        id: "menu-led",
-        children: [
-          { label: "Multi-modes", href: "https://akko.vn/multi-modes/" },
-          { label: "Bluetooth",   href: "https://akko.vn/bluetooth/" },
-          { label: "Led RGB",     href: "https://akko.vn/led-rgb/" },
-        ],
-      },
-    ],
-  },
-  { label: "Kit Bàn Phím", href: "./products.html#kit_ban_phim" },
-  { label: "Keycap",       href: "./products.html#keycap" },
-  { label: "Switch",       href: "./products.html#switch" },
-  { label: "Mouse",        href: "./products.html#mouse" },
-  { label: "Phụ Kiện",    href: "./products.html#phu_kien" },
-];
+const DATA_URL = (() => {
+  const scriptTag = document.currentScript ||
+    document.querySelector('script[data-product-src]');
+  return (scriptTag && scriptTag.dataset.productSrc) || "../assets/data/product-data.json";
+})();
 
-// 2. PRODUCT DATA
-
-const product = {
-  // --- Basic info ---
-  title:      "Bàn phím cơ AKKO 5075S Black on White (Hotswap/Led RGB/USB Type-C)",
-  breadcrumb: [
-    { label: "Trang chủ", href: "https://akko.vn" },
-    { label: "Keyboard",  href: "https://akko.vn/keyboard/" },
-  ],
-  category: { label: "Keyboard", href: "https://akko.vn/keyboard/" },
-
-  // --- Pricing (use null for no old price) ---
-  oldPrice: "790,000",
-  newPrice: "750,000",
-  saleBadge: "-5%",         // shown on main image; set to null to hide
-
-  // --- Promotional bullets ---
-  promos: [
-    "Freeship toàn quốc khi đặt hàng tại Akko.vn",
-    "Bảo hành chính hãng 12 tháng",
-    "Chi nhánh bảo hành 3 miền: Bắc – Trung – Nam",
-  ],
-
-  // --- Official store links ---
-  stores: [
-    {
-      platform: "Shopee Mall",
-      href: "https://s.shopee.vn/9KXKjmvDmM",
-      icon: "fa fa-cart-plus",
-      name: "Akko Gear VN",
-    },
-    {
-      platform: "Shopee Store",
-      href: "https://s.shopee.vn/5Ajj0VoWpK",
-      icon: "fa fa-keyboard-o",
-      name: "Akko Store",
-    },
-    {
-      platform: "TikTokShop",
-      href: "https://vt.tiktok.com/ZSU6tu4WR/?page=TikTokShop",
-      icon: "bi bi-tiktok",
-      name: "Akko Việt Nam",
-    },
-  ],
-
-  // --- Social share (uses current page URL) ---
-  shareUrl: "https://akko.vn/ban-phim-co-akko-5075s-black-on-white/",
-
-  // ---- Gallery images ----
-  // `main`  = full-size image shown in the viewer
-  // `thumb` = smaller thumbnail (append -510x340, etc. as needed)
-  images: [
-    {
-      main:  "https://akko.vn/wp-content/uploads/2026/02/Ban-phim-co-AKKO-5075S-Black-on-White.png",
-      thumb: "https://akko.vn/wp-content/uploads/2026/02/Ban-phim-co-AKKO-5075S-Black-on-White.png",
-      alt:   "AKKO 5075S Black on White - View 1",
-    },
-    {
-      main:  "https://akko.vn/wp-content/uploads/2026/02/Ban-phim-co-AKKO-5075S-Black-on-White-1.jpg",
-      thumb: "https://akko.vn/wp-content/uploads/2026/02/Ban-phim-co-AKKO-5075S-Black-on-White-1-510x340.jpg",
-      alt:   "AKKO 5075S Black on White - View 2",
-    },
-    {
-      main:  "https://akko.vn/wp-content/uploads/2026/02/Ban-phim-co-AKKO-5075S-Black-on-White-2.jpg",
-      thumb: "https://akko.vn/wp-content/uploads/2026/02/Ban-phim-co-AKKO-5075S-Black-on-White-2-510x765.jpg",
-      alt:   "AKKO 5075S Black on White - View 3",
-    },
-    {
-      main:  "https://akko.vn/wp-content/uploads/2026/02/Ban-phim-co-AKKO-5075S-Black-on-White-3.jpg",
-      thumb: "https://akko.vn/wp-content/uploads/2026/02/Ban-phim-co-AKKO-5075S-Black-on-White-3-510x340.jpg",
-      alt:   "AKKO 5075S Black on White - View 4",
-    },
-    {
-      main:  "https://akko.vn/wp-content/uploads/2026/02/Ban-phim-co-AKKO-5075S-Black-on-White-4.jpg",
-      thumb: "https://akko.vn/wp-content/uploads/2026/02/Ban-phim-co-AKKO-5075S-Black-on-White-4-510x340.jpg",
-      alt:   "AKKO 5075S Black on White - View 5",
-    },
-    {
-      main:  "https://akko.vn/wp-content/uploads/2026/02/Ban-phim-co-AKKO-5075S-Black-on-White-5.jpg",
-      thumb: "https://akko.vn/wp-content/uploads/2026/02/Ban-phim-co-AKKO-5075S-Black-on-White-5-510x340.jpg",
-      alt:   "AKKO 5075S Black on White - View 6",
-    },
-    {
-      main:  "https://akko.vn/wp-content/uploads/2026/02/Ban-phim-co-AKKO-5075S-Black-on-White-6.jpg",
-      thumb: "https://akko.vn/wp-content/uploads/2026/02/Ban-phim-co-AKKO-5075S-Black-on-White-6-510x765.jpg",
-      alt:   "AKKO 5075S Black on White - View 7",
-    },
-    {
-      main:  "https://akko.vn/wp-content/uploads/2026/02/Ban-phim-co-AKKO-5075S-Black-on-White-7.jpg",
-      thumb: "https://akko.vn/wp-content/uploads/2026/02/Ban-phim-co-AKKO-5075S-Black-on-White-7-510x340.jpg",
-      alt:   "AKKO 5075S Black on White - View 8",
-    },
-    {
-      main:  "https://akko.vn/wp-content/uploads/2026/02/Ban-phim-co-AKKO-5075S-Black-on-White-8.jpg",
-      thumb: "https://akko.vn/wp-content/uploads/2026/02/Ban-phim-co-AKKO-5075S-Black-on-White-8-510x765.jpg",
-      alt:   "AKKO 5075S Black on White - View 9",
-    },
-    {
-      main:  "https://akko.vn/wp-content/uploads/2026/02/Ban-phim-co-AKKO-5075S-Black-on-White-9.jpg",
-      thumb: "https://akko.vn/wp-content/uploads/2026/02/Ban-phim-co-AKKO-5075S-Black-on-White-9-510x340.jpg",
-      alt:   "AKKO 5075S Black on White - View 10",
-    },
-    {
-      main:  "https://akko.vn/wp-content/uploads/2026/02/Ban-phim-co-AKKO-5075S-Black-on-White-10.jpg",
-      thumb: "https://akko.vn/wp-content/uploads/2026/02/Ban-phim-co-AKKO-5075S-Black-on-White-10-510x340.jpg",
-      alt:   "AKKO 5075S Black on White - View 11",
-    },
-    {
-      main:  "https://akko.vn/wp-content/uploads/2026/02/Ban-phim-co-AKKO-5075S-Black-on-White-11.jpg",
-      thumb: "https://akko.vn/wp-content/uploads/2026/02/Ban-phim-co-AKKO-5075S-Black-on-White-11-510x340.jpg",
-      alt:   "AKKO 5075S Black on White - View 12",
-    },
-    {
-      main:  "https://akko.vn/wp-content/uploads/2026/02/Ban-phim-co-AKKO-5075S-Black-on-White-12.jpg",
-      thumb: "https://akko.vn/wp-content/uploads/2026/02/Ban-phim-co-AKKO-5075S-Black-on-White-12-510x340.jpg",
-      alt:   "AKKO 5075S Black on White - View 13",
-    },
-    {
-      main:  "https://akko.vn/wp-content/uploads/2026/02/Ban-phim-co-AKKO-5075S-Black-on-White-13.jpg",
-      thumb: "https://akko.vn/wp-content/uploads/2026/02/Ban-phim-co-AKKO-5075S-Black-on-White-13-510x765.jpg",
-      alt:   "AKKO 5075S Black on White - View 14",
-    },
-    {
-      main:  "https://akko.vn/wp-content/uploads/2026/02/Ban-phim-co-AKKO-5075S-Black-on-White-14.jpg",
-      thumb: "https://akko.vn/wp-content/uploads/2026/02/Ban-phim-co-AKKO-5075S-Black-on-White-14-510x765.jpg",
-      alt:   "AKKO 5075S Black on White - View 15",
-    },
-    {
-      main:  "https://akko.vn/wp-content/uploads/2026/02/Ban-phim-co-AKKO-5075S-Black-on-White-15.jpg",
-      thumb: "https://akko.vn/wp-content/uploads/2026/02/Ban-phim-co-AKKO-5075S-Black-on-White-15-510x340.jpg",
-      alt:   "AKKO 5075S Black on White - View 16",
-    },
-    {
-      main:  "https://akko.vn/wp-content/uploads/2026/02/Ban-phim-co-AKKO-5075S-Black-on-White-16.jpg",
-      thumb: "https://akko.vn/wp-content/uploads/2026/02/Ban-phim-co-AKKO-5075S-Black-on-White-16-510x765.jpg",
-      alt:   "AKKO 5075S Black on White - View 17",
-    },
-    {
-      main:  "https://akko.vn/wp-content/uploads/2026/02/Ban-phim-co-AKKO-5075S-Black-on-White-17.jpg",
-      thumb: "https://akko.vn/wp-content/uploads/2026/02/Ban-phim-co-AKKO-5075S-Black-on-White-17-510x765.jpg",
-      alt:   "AKKO 5075S Black on White - View 18",
-    },
-    {
-      main:  "https://akko.vn/wp-content/uploads/2026/02/Ban-phim-co-AKKO-5075S-Black-on-White-18.jpg",
-      thumb: "https://akko.vn/wp-content/uploads/2026/02/Ban-phim-co-AKKO-5075S-Black-on-White-18-510x340.jpg",
-      alt:   "AKKO 5075S Black on White - View 19",
-    },
-    {
-      main:  "https://akko.vn/wp-content/uploads/2026/02/Ban-phim-co-AKKO-5075S-Black-on-White-19.jpg",
-      thumb: "https://akko.vn/wp-content/uploads/2026/02/Ban-phim-co-AKKO-5075S-Black-on-White-19-510x340.jpg",
-      alt:   "AKKO 5075S Black on White - View 20",
-    },
-    {
-      main:  "https://akko.vn/wp-content/uploads/2026/02/Ban-phim-co-AKKO-5075S-Black-on-White-20.jpg",
-      thumb: "https://akko.vn/wp-content/uploads/2026/02/Ban-phim-co-AKKO-5075S-Black-on-White-20-510x765.jpg",
-      alt:   "AKKO 5075S Black on White - View 21",
-    },
-    {
-      main:  "https://akko.vn/wp-content/uploads/2026/02/Ban-phim-co-AKKO-5075S-Black-on-White-22.png",
-      thumb: "https://akko.vn/wp-content/uploads/2026/02/Ban-phim-co-AKKO-5075S-Black-on-White-22-510x287.png",
-      alt:   "AKKO 5075S Black on White - View 22",
-    },
-  ],
-
-  // ---- Description tab: banner images ----
-  descriptionImages: [
-    { src: "https://akkogear.com.vn/wp-content/uploads/2026/02/1-11.png", alt: "Description 1" },
-    { src: "https://akkogear.com.vn/wp-content/uploads/2026/02/2-11.png", alt: "Description 2" },
-    { src: "https://akkogear.com.vn/wp-content/uploads/2026/02/3-8.png",  alt: "Description 3" },
-    { src: "https://akkogear.com.vn/wp-content/uploads/2026/02/4-8.png",  alt: "Description 4" },
-    { src: "https://akkogear.com.vn/wp-content/uploads/2026/02/5-6.png",  alt: "Description 5" },
-    { src: "https://akkogear.com.vn/wp-content/uploads/2026/02/6-5.png",  alt: "Description 6" },
-    { src: "https://akkogear.com.vn/wp-content/uploads/2026/02/7-5.png",  alt: "Description 7" },
-    { src: "https://akkogear.com.vn/wp-content/uploads/2026/02/8-5.png",  alt: "Description 8" },
-  ],
-
-  // ---- Specs table rows ----
-  specs: [
-    { label: "Model",            value: "5075S Black on White" },
-    { label: "Cấu Trúc",        value: "Gasket Mount" },
-    { label: "Vỏ",              value: "ABS" },
-    { label: "Màu sắc",         value: "Black on White" },
-    { label: "Kết Nối",         value: "USB Type-C" },
-    { label: "LED",              value: "RGB" },
-    { label: "Switches",         value: "Akko Frost Pink" },
-    { label: "Hot Swappable",    value: "Yes" },
-    { label: "N-Key Rollover",   value: "Yes" },
-    { label: "Keycaps",          value: "PBT Double Shot, Cherry Profile" },
-    { label: "Trình điều khiển", value: "Akko Cloud Driver" },
-    { label: "Side-Printed",     value: "Yes" },
-    { label: "Kích Thước",       value: "335×146×42mm" },
-    { label: "Trọng lượng",      value: "1.2Kg" },
-    {
-      label: "Phụ Kiện",
-      value: "1 sách hướng dẫn sử dụng + 1 dây USB Type-C + 1 Che bụi bàn phím + Key puller, switch puller",
-    },
-  ],
-
-  // ---- Related products (add/remove items freely) ----
-  // `inStock: false` shows "Hết hàng" badge
-  relatedProducts: [
-    {
-      img:     "https://akko.vn/wp-content/uploads/2020/06/gokuvg1-ava-247x247.jpg",
-      title:   "Bàn phím cơ AKKO 3108 Dragon Ball Z – Vegeta (Akko switch)",
-      price:   "1,699,000₫",
-      inStock: false,
-      href:    "#",
-    },
-    {
-      img:     "https://akko.vn/wp-content/uploads/2020/03/10221-247x247.jpg",
-      title:   "AKKO 3108S RGB Pro – Black (Cherry Switch)",
-      price:   "2,399,000₫",
-      inStock: false,
-      href:    "#",
-    },
-    {
-      img:     "https://akko.vn/wp-content/uploads/2020/06/10669-247x247.jpg",
-      title:   "Bàn phím cơ AKKO 3068 SP Ocean Star (Cherry Switch)",
-      price:   "1,499,000₫",
-      inStock: false,
-      href:    "#",
-    },
-    {
-      img:     "https://akko.vn/wp-content/uploads/2019/12/3087_pika_1-247x247.jpg",
-      title:   "Bàn phím cơ 3087 PIKACHU DETECTIVE",
-      price:   "Liên hệ",
-      inStock: false,
-      href:    "#",
-    },
-    {
-      img:     "https://akko.vn/wp-content/uploads/2020/06/10902-247x247.jpg",
-      title:   "Bàn phím cơ AKKO 3108 Silent (Cherry switch)",
-      price:   "1,899,000₫",
-      inStock: false,
-      href:    "#",
-    },
-    {
-      img:     "https://akko.vn/wp-content/uploads/2020/03/10348-247x247.jpg",
-      title:   "AKKO 3108S Pink Led White",
-      price:   "1,749,000₫",
-      inStock: false,
-      href:    "#",
-    },
-    {
-      img:     "https://akko.vn/wp-content/uploads/2020/03/10226-247x247.jpg",
-      title:   "AKKO 3108S RGB Pro- Pink (Cherry switch)",
-      price:   "2,399,000₫",
-      inStock: false,
-      href:    "#",
-    },
-    {
-      img:     "https://akko.vn/wp-content/uploads/2020/06/3096-247x247.jpg",
-      title:   "Bàn phím cơ AKKO 3096 – World Tour Tokyo R2",
-      price:   "2,550,000₫",
-      inStock: false,
-      href:    "#",
-    },
-  ],
-};
-
-// 3. RENDER FUNCTIONS
+// 1. RENDER FUNCTIONS
+//    Each function receives the loaded data as a parameter — no globals.
 
 /**
- * renderSidebar()
- * Builds the sidebar category menu from `sidebarMenu` data.
+ * renderSidebar(sidebarMenu)
+ * Builds the sidebar category menu.
  * Supports up to 2 levels of nested dropdowns.
  */
-function renderSidebar() {
+function renderSidebar(sidebarMenu) {
   const ul = document.getElementById("sidebar-menu");
   if (!ul) return;
 
@@ -375,21 +85,19 @@ function renderSidebar() {
 }
 
 /**
- * renderGallery()
+ * renderGallery(product)
  * Builds the CSS-only radio-controlled image gallery.
- * Each image gets a numbered radio input + main image + thumbnail.
  */
-function renderGallery() {
+function renderGallery(product) {
   const gallery   = document.getElementById("product-gallery");
   const thumbWrap = document.getElementById("thumbnail-container");
   if (!gallery || !thumbWrap) return;
 
-  const total = product.images.length;
-
-  // --- Hidden radio inputs (drive CSS :checked selectors) ---
+  // --- Hidden radio inputs ---
   const radios = product.images
-    .map((_, i) => `<input type="radio" name="gallery" id="img${i + 1}" class="image-radio"${i === 0 ? " checked" : ""} />`)
-    .join("\n");
+    .map((_, i) =>
+      `<input type="radio" name="gallery" id="img${i + 1}" class="image-radio"${i === 0 ? " checked" : ""} />`
+    ).join("\n");
 
   // --- Main images ---
   const mainImgs = product.images
@@ -405,7 +113,6 @@ function renderGallery() {
     : "";
 
   // --- Prev / Next nav arrows ---
-  // The prev arrow always points to the last image when on img1 (wraps around)
   const prevNextArrows = `
     <label for="img1" class="slider-arrow slider-prev">
       <i class="bi bi-chevron-left"></i>
@@ -452,11 +159,11 @@ function renderGallery() {
 }
 
 /**
- * renderProductInfo()
+ * renderProductInfo(product)
  * Builds breadcrumb, title, price, promos, quantity form,
  * store links, category and social share buttons.
  */
-function renderProductInfo() {
+function renderProductInfo(product) {
   const container = document.getElementById("product-info");
   if (!container) return;
 
@@ -491,11 +198,11 @@ function renderProductInfo() {
   // Social share buttons (open in popup)
   const popupScript = `window.open(this.href,this.title,'width=500,height=500,top=300px,left=300px');return false;`;
   const shareLinks = [
-    { cls: "facebook", icon: "bi bi-facebook", url: `//www.facebook.com/sharer.php?u=${product.shareUrl}` },
-    { cls: "twitter",  icon: "bi bi-twitter",  url: `//twitter.com/share?url=${product.shareUrl}` },
-    { cls: "email",    icon: "bi bi-envelope",  url: `mailto:?body=${product.shareUrl}` },
-    { cls: "pinterest",icon: "bi bi-pinterest", url: `//pinterest.com/pin/create/button/?url=${product.shareUrl}` },
-    { cls: "linkedin", icon: "bi bi-linkedin",  url: `//www.linkedin.com/shareArticle?mini=true&url=${product.shareUrl}` },
+    { cls: "facebook",  icon: "bi bi-facebook",  url: `//www.facebook.com/sharer.php?u=${product.shareUrl}` },
+    { cls: "twitter",   icon: "bi bi-twitter",   url: `//twitter.com/share?url=${product.shareUrl}` },
+    { cls: "email",     icon: "bi bi-envelope",  url: `mailto:?body=${product.shareUrl}` },
+    { cls: "pinterest", icon: "bi bi-pinterest", url: `//pinterest.com/pin/create/button/?url=${product.shareUrl}` },
+    { cls: "linkedin",  icon: "bi bi-linkedin",  url: `//www.linkedin.com/shareArticle?mini=true&url=${product.shareUrl}` },
   ].map((s) => `
     <a href="${s.url}" target="_blank"
        onclick="${popupScript}"
@@ -559,11 +266,11 @@ function renderProductInfo() {
 }
 
 /**
- * renderTabs()
- * Builds the description tab (banner images + specs table)
- * and the reviews tab, plus the related products carousel.
+ * renderTabs(product)
+ * Builds the description tab (banner images + specs table),
+ * the reviews tab, and the related products carousel.
  */
-function renderTabs() {
+function renderTabs(product) {
   const container = document.getElementById("product-tabs");
   if (!container) return;
 
@@ -692,11 +399,49 @@ function renderTabs() {
     </div>`;
 }
 
-// 4. INITIALISE — run all renderers when DOM is ready
+// 2. ERROR UI
+//    Show a visible message when data cannot be loaded.
 
-document.addEventListener("DOMContentLoaded", () => {
-  renderSidebar();
-  renderGallery();
-  renderProductInfo();
-  renderTabs();
+function showError(message) {
+  const targets = ["sidebar-menu", "product-gallery", "product-info", "product-tabs"];
+  targets.forEach((id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.innerHTML = `
+        <div style="padding:16px;color:#c0392b;border:1px solid #e74c3c;border-radius:6px;margin:8px 0;">
+          <strong>⚠ Lỗi tải dữ liệu:</strong> ${message}
+        </div>`;
+    }
+  });
+  console.error("[product-detail.js]", message);
+}
+
+// 3. BOOTSTRAP — fetch JSON then render everything
+
+document.addEventListener("DOMContentLoaded", async () => {
+  try {
+    const response = await fetch(DATA_URL);
+
+    // Handle HTTP-level errors (404, 500, etc.)
+    if (!response.ok) {
+      throw new Error(`Không tìm thấy file dữ liệu (HTTP ${response.status}: ${DATA_URL})`);
+    }
+
+    const data = await response.json();
+
+    // Basic shape validation
+    if (!data.product || !data.sidebarMenu) {
+      throw new Error(`File JSON thiếu trường "product" hoặc "sidebarMenu".`);
+    }
+
+    // Render all sections with loaded data
+    renderSidebar(data.sidebarMenu);
+    renderGallery(data.product);
+    renderProductInfo(data.product);
+    renderTabs(data.product);
+
+  } catch (err) {
+    // Covers network failures, JSON parse errors, and our custom throws
+    showError(err.message);
+  }
 });
