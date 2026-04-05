@@ -9,6 +9,7 @@ body {
     line-height: 1.6;
     color: #777;
     min-height: 500px;
+    padding: auto;
 }
 
 .container {
@@ -362,12 +363,14 @@ body {
 }
 
 .order-summary {
-    width: 40%;
+    width: 50%;
     background: #fff;
     padding: 30px;
     border-left: 1px solid #eee;
     position: sticky;
     top: 20px;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
 }
 
 .summary-title {

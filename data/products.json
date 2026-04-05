@@ -1,61 +1,308 @@
-[{
-  "id": "akko-3108-v3-black-gold",
-  "name": "Bàn phím AKKO 3108 V3 Black & Gold (Hotswap/USB Type-C/White Led)",
-  "price": 699000,
-  "originalPrice": 990000,
-  "image": ".\\assets\\images\\Bàn phím AKKO 3108 V3 Black & Gold (HotswapUSB Type-CWhite Led)\\Ban-phim-AKKO-3108-V3-Black-Gold-1.png",
-  "category": "keyboard",
-  "description": "Bàn phím cơ AKKO 3108 V3 Black & Gold với thiết kế sang trọng, hỗ trợ Hotswap và kết nối USB Type-C. Trang bị LED White và switch Akko Frost Pink mang lại trải nghiệm gõ phím tuyệt vời.",
-  "promotions": [
-    "Freeship toàn quốc khi đặt hàng tại Akko.vn",
-    "Bảo hành chính hãng 12 tháng",
-    "Chi nhánh bảo hành 3 miền: Bắc – Trung – Nam"
-  ],
-  "specs": {
-    "Model": "3108 V3 Black & Gold",
-    "Vỏ": "ABS",
-    "Màu sắc": "Black & Gold",
-    "Kết Nối": "USB Type-C",
-    "LED": "White",
-    "Switches": "Akko Frost Pink",
-    "Pin": "No",
-    "Hot Swappable": "Yes",
-    "N-Key Rollover": "Yes",
-    "Keycaps": "PBT Double Shot, Cherry Profile",
-    "Trình điều khiển": "Akko Driver",
-    "Kích Thước": "442*140*40mm",
-    "Trọng lượng": "1.2Kg",
-    "Phụ Kiện": "1 sách hướng dẫn sử dụng + 1 dây USB Type-C + 1 Che bụi bàn phím + 2 trong 1 Key puller, switch puller"
+[
+  {
+    "id": "bn-phm-akko-3108-v3-black-gold-hotswapusb-typecwhite-led",
+    "name": "Bàn phím AKKO 3108 V3 Black & Gold (Hotswap/USB Type-C/White Led)",
+    "price": 699000,
+    "originalPrice": 990000,
+    "image": "assets/images/keyboard/1 AKKO3108V3 Black & Gold/Ban-phim-AKKO-3108-V3-Black-Gold-1.png",
+    "category": "keyboard",
+    "description": "Bàn phím AKKO 3108 V3 Black & Gold (Hotswap/USB Type-C/White Led)",
+    "promotions": [
+      "Freeship toàn quốc khi đặt hàng tại Akko.vn",
+      "Bảo hành chính hãng 12 tháng",
+      "Chi nhánh bảo hành 3 miền: Bắc – Trung – Nam"
+    ],
+    "specs": {
+      "Model": "3108 V3 Black & Gold",
+      "Vỏ": "ABS",
+      "Màu sắc": "Black & Gold",
+      "Kết Nối": "USB Type-C",
+      "LED": "White",
+      "Switches": "Akko Frost Pink",
+      "Pin": "No",
+      "Hot Swappable": "Yes",
+      "N-Key Rollover": "Yes",
+      "Keycaps": "PBT Double Shot , Cherry Profile",
+      "Trình điều khiển": "Akko Driver",
+      "Kích Thước": "442*140*40mm",
+      "Trọng lượng": "1.2Kg",
+      "Phụ Kiện": "1 sách hướng dẫn sử dụng + 1 dây USB Type-C + 1 Che bụi bàn phím + 2 trong 1 Key puller ,switch puller"
+    }
+  },
+  {
+    "id": "bn-phm-akko-3108-v3-glacier-hotswapusb-typecwhite-led",
+    "name": "Bàn phím AKKO 3108 V3 Glacier (Hotswap/USB Type-C/White Led)",
+    "price": 799000,
+    "originalPrice": 990000,
+    "image": "assets/images/keyboard/2 AKKO3108V3 Glacier/Ban-phim-AKKO-3108-V3-Glacier.png",
+    "category": "keyboard",
+    "description": "Bàn phím AKKO 3108 V3 Glacier (Hotswap/USB Type-C/White Led)",
+    "promotions": [
+      "Freeship toàn quốc khi đặt hàng tại Akko.vn",
+      "Bảo hành chính hãng 12 tháng",
+      "Chi nhánh bảo hành 3 miền: Bắc – Trung – Nam"
+    ],
+    "specs": {
+      "Model": "3108 V3 Glacier",
+      "Vỏ": "ABS",
+      "Màu sắc": "Glacier",
+      "Kết Nối": "USB Type-C/Wireless",
+      "LED": "White",
+      "Switches": "Akko Frost Pink",
+      "Pin": "No",
+      "Hot Swappable": "Yes",
+      "N-Key Rollover": "Yes",
+      "Keycaps": "PBT Double Shot , Cherry Profile",
+      "Trình điều khiển": "Akko Driver",
+      "Kích Thước": "442*140*40mm",
+      "Trọng lượng": "1.2Kg",
+      "Phụ Kiện": "1 sách hướng dẫn sử dụng + 1 dây USB Type-C + 1 Che bụi bàn phím + 2 trong 1 Key puller ,switch puller"
+    }
+  },
+  {
+    "id": "bn-phm-akko-3108-v3-yier-and-bubu-pink-hotswapusb-typecwhite-led",
+    "name": "Bàn phím AKKO 3108 V3 Yier and Bubu Pink (Hotswap/USB Type-C/White Led)",
+    "price": 1099000,
+    "originalPrice": 1290000,
+    "image": "assets/images/keyboard/3 AKKO3108V3 Yier and Bubu Pink/Ban-phim-AKKO-3108-V3-Yier-and-Bubu-Pink.png",
+    "category": "keyboard",
+    "description": "Bàn phím AKKO 3108 V3 Yier and Bubu Pink (Hotswap/USB Type-C/White Led)",
+    "promotions": [
+      "Freeship toàn quốc khi đặt hàng tại Akko.vn",
+      "Bảo hành chính hãng 12 tháng",
+      "Chi nhánh bảo hành 3 miền: Bắc – Trung – Nam"
+    ],
+    "specs": {
+      "Model": "3108 V3 Yier and Bubu",
+      "Vỏ": "ABS",
+      "Màu sắc": "Pink",
+      "Kết Nối": "USB Type-C",
+      "LED": "White",
+      "Switches": "Akko Frost Pink",
+      "Hot Swappable": "Yes",
+      "N-Key Rollover": "Yes",
+      "Keycaps": "PBT Dye-Sublimation , MOA Profile",
+      "Trình điều khiển": "Akko Driver",
+      "Kích Thước": "442*140*40mm",
+      "Trọng lượng": "1.2Kg",
+      "Phụ Kiện": "1 sách hướng dẫn sử dụng + 1 dây USB Type-C + 1 Che bụi bàn phím + 2 trong 1 Key puller ,switch puller"
+    }
+  },
+  {
+    "id": "bn-phm-akko-3108rf-v3-black-gold-hotswapusb-typecwirelessno-led",
+    "name": "Bàn phím AKKO 3108RF V3 Black & Gold (Hotswap/USB Type-C/Wireless/No Led)",
+    "price": 799000,
+    "originalPrice": 1190000,
+    "image": "assets/images/keyboard/4 AKKO3108RFV3 Black & Gold/Ban-phim-AKKO-3108RF-V3-Black-Gold.png",
+    "category": "keyboard",
+    "description": "Bàn phím AKKO 3108RF V3 Black & Gold (Hotswap/USB Type-C/Wireless/No Led)",
+    "promotions": [
+      "Freeship toàn quốc khi đặt hàng tại Akko.vn",
+      "Bảo hành chính hãng 12 tháng",
+      "Chi nhánh bảo hành 3 miền: Bắc – Trung – Nam"
+    ],
+    "specs": {
+      "Model": "3108RF V3 Black & Gold",
+      "Vỏ": "ABS",
+      "Màu sắc": "Black & Gold",
+      "Kết Nối": "USB Type-C/Wireless",
+      "LED": "No",
+      "Switches": "Akko Frost Pink",
+      "Pin": "AAA",
+      "Hot Swappable": "Yes",
+      "N-Key Rollover": "Yes",
+      "Keycaps": "PBT Double Shot , Cherry Profile",
+      "Trình điều khiển": "Akko Driver",
+      "Kích Thước": "442*140*40mm",
+      "Trọng lượng": "1.2Kg",
+      "Phụ Kiện": "1 sách hướng dẫn sử dụng + 1 dây USB Type-C + 1 Che bụi bàn phím + 2 trong 1 Key puller ,switch puller"
+    }
+  },
+  {
+    "id": "bn-phm-akko-3108rf-v3-glacier-hotswapusb-typecwirelessno-led",
+    "name": "Bàn phím AKKO 3108RF V3 Glacier (Hotswap/USB Type-C/Wireless/No Led)",
+    "price": 799000,
+    "originalPrice": 1190000,
+    "image": "assets/images/keyboard/5 AKKO3108RFV3 Glacier/Ban-phim-AKKO-3108RF-V3-Glacier.png",
+    "category": "keyboard",
+    "description": "Bàn phím AKKO 3108RF V3 Glacier (Hotswap/USB Type-C/Wireless/No Led)",
+    "promotions": [
+      "Freeship toàn quốc khi đặt hàng tại Akko.vn",
+      "Bảo hành chính hãng 12 tháng",
+      "Chi nhánh bảo hành 3 miền: Bắc – Trung – Nam"
+    ],
+    "specs": {
+      "Model": "3108RF V3 Glacier",
+      "Vỏ": "ABS",
+      "Màu sắc": "Glacier",
+      "Kết Nối": "USB Type-C/Wireless",
+      "LED": "No",
+      "Switches": "Akko Frost Pink",
+      "Pin": "AAA",
+      "Hot Swappable": "Yes",
+      "N-Key Rollover": "Yes",
+      "Keycaps": "PBT Double Shot , Cherry Profile",
+      "Trình điều khiển": "Akko Driver",
+      "Kích Thước": "442*140*40mm",
+      "Trọng lượng": "1.2Kg",
+      "Phụ Kiện": "1 sách hướng dẫn sử dụng + 1 dây USB Type-C + 1 Che bụi bàn phím + 2 trong 1 Key puller ,switch puller"
+    }
+  },
+  {
+    "id": "bn-phm-akko-3108rf-v3-yier-and-bubu-yellow-hotswapusb-typecwirelessno-led",
+    "name": "Bàn phím AKKO 3108RF V3 Yier and Bubu yellow (Hotswap/USB Type-C/Wireless/No Led)",
+    "price": 1199000,
+    "originalPrice": 1390000,
+    "image": "assets/images/keyboard/6 AKKO3108RFV3 Yier and Bubu yellow/Ban-phim-AKKO-3108RF-V3-Yier-and-Bubu-yellow.png",
+    "category": "keyboard",
+    "description": "Bàn phím AKKO 3108RF V3 Yier and Bubu yellow (Hotswap/USB Type-C/Wireless/No Led)",
+    "promotions": [
+      "Freeship toàn quốc khi đặt hàng tại Akko.vn",
+      "Bảo hành chính hãng 12 tháng",
+      "Chi nhánh bảo hành 3 miền: Bắc – Trung – Nam"
+    ],
+    "specs": {
+      "Model": "3108RF V3 Yier and Bubu",
+      "Vỏ": "ABS",
+      "Màu sắc": "Yellow",
+      "Kết Nối": "USB Type-C/Wireless",
+      "LED": "No",
+      "Switches": "Akko Frost Pink",
+      "Pin": "AAA",
+      "Hot Swappable": "Yes",
+      "N-Key Rollover": "Yes",
+      "Keycaps": "PBT Dye-Sublimation , MOA Profile",
+      "Trình điều khiển": "Akko Driver",
+      "Kích Thước": "442*140*40mm",
+      "Trọng lượng": "1.2Kg",
+      "Phụ Kiện": "1 sách hướng dẫn sử dụng + 1 dây USB Type-C + 1 Che bụi bàn phím + 2 trong 1 Key puller ,switch puller"
+    }
+  },
+  {
+    "id": "bn-phm-akko-5108b-plus-spyfamily",
+    "name": "Bàn phím AKKO 5108B Plus SPY×FAMILY",
+    "price": 2099000,
+    "originalPrice": 2499000,
+    "image": "assets/images/keyboard/Bàn phím AKKO 5108B Plus SPY×FAMILY/Ban-phim-AKKO-5108B-Plus-SPY×FAMILY.png",
+    "category": "keyboard",
+    "description": "Bàn phím AKKO 5108B Plus SPY×FAMILY",
+    "promotions": [
+      "Freeship toàn quốc khi đặt hàng tại Akko.vn",
+      "Bảo hành chính hãng 12 tháng",
+      "Chi nhánh bảo hành 3 miền: Bắc – Trung – Nam"
+    ],
+    "specs": {
+      "Model": "5108B Plus SPY×FAMILY",
+      "Cấu Trúc": "Gasket Mount",
+      "Vỏ": "ABS",
+      "Màu sắc": "SPY×FAMILY",
+      "Kết Nối": "USB Type-C, 2.4G / Bluetooth",
+      "LED": "RGB",
+      "Switches": "Akko V3 Piano pro",
+      "Pin": "3000 mAh",
+      "Hot Swappable": "Yes",
+      "N-Key Rollover": "Yes",
+      "Keycaps": "PBT Double Shot , MOA Profile",
+      "Trình điều khiển": "Akko Cloud Driver",
+      "Side-Printed": "Yes",
+      "Kích Thước": "442*132*41mm",
+      "Trọng lượng": "1.27Kg",
+      "Phụ Kiện": "1 sách hướng dẫn sử dụng + 1 dây USB Type-C + 1 Che bụi bàn phím + 2 trong 1 Key puller ,switch puller"
+    }
+  },
+  {
+    "id": "bn-phm-c-akko-5075s-black-on-white-hotswapled-rgbusb-typec",
+    "name": "Bàn phím cơ AKKO 5075S Black on White (Hotswap/Led RGB/USB Type-C)",
+    "price": 690000,
+    "originalPrice": 790000,
+    "image": "assets/images/keyboard/Bàn phím cơ AKKO 5075S Black&Silver (HotswapLed RGBUSB Type-C)/Ban-phim-co-AKKO-5075S-BlackSilver.png",
+    "category": "keyboard",
+    "description": "Bàn phím cơ AKKO 5075S Black on White (Hotswap/Led RGB/USB Type-C)",
+    "promotions": [
+      "Freeship toàn quốc khi đặt hàng tại Akko.vn",
+      "Bảo hành chính hãng 12 tháng",
+      "Chi nhánh bảo hành 3 miền: Bắc – Trung – Nam"
+    ],
+    "specs": {
+      "Model": "5075S Black&Silver",
+      "Cấu Trúc": "Gasket Mount",
+      "Vỏ": "ABS",
+      "Màu sắc": "Black&Silver",
+      "Kết Nối": "USB Type-C",
+      "LED": "RGB",
+      "Switches": " Akko Frost Pink",
+      "Hot Swappable": "Yes",
+      "N-Key Rollover": "Yes",
+      "Keycaps": "PBT Double Shot , Cherry Profile",
+      "Trình điều khiển": "Akko Cloud Driver",
+      "Side-Printed": "Yes",
+      "Kích Thước": "335*146*42mm",
+      "Trọng lượng": "1.2Kg",
+      "Phụ Kiện": "1 sách hướng dẫn sử dụng + 1 dây USB Type-C + 1 Che bụi bàn phím +  Key puller ,switch puller"
+    }
+  },
+  {
+    "id": "bn-phm-c-akko-5108b-plus-sakura-miku-akko-piano-pro-switch",
+    "name": "Bàn phím cơ AKKO 5108B Plus Sakura Miku Akko Piano Pro Switch",
+    "price": 1999000,
+    "originalPrice": 2490000,
+    "image": "assets/images/keyboard/Bàn phím cơ AKKO 5108B Plus Sakura Miku Akko Piano Pro Switch/Ban-phim-co-AKKO-5108B-Plus-Sakura-Miku-Akko-Piano-Pro-Switch-1.png",
+    "category": "keyboard",
+    "description": "Bàn phím cơ AKKO 5108B Plus Sakura Miku Akko Piano Pro Switch",
+    "promotions": [
+      "Freeship toàn quốc khi đặt hàng tại Akko.vn",
+      "Bảo hành chính hãng 12 tháng",
+      "Chi nhánh bảo hành 3 miền: Bắc – Trung – Nam"
+    ],
+    "specs": {
+      "Model": "AKKO 5108B Plus Sakura Miku",
+      "Cấu Trúc": "Gasket Mount",
+      "Vỏ + Phím": "PBT Keycaps",
+      "Màu sắc": "Sakura Miku",
+      "Kết Nối": "Bluetooth 5.0 / 2.4GHz / USB Type-C",
+      "LED": "South-facing RGB",
+      "N-Key Rollover": "Support",
+      "Switches": "Akko V3 Piano Pro",
+      "Hot Swappable": "3-Pin / 5-Pin Support",
+      "Polling Rate": "1000Hz In wired and 2.4G mode, 125Hz in Bluetooth mode.",
+      "Keycaps": "Cherry Profile",
+      "Trình điều khiển": "Akko Cloud Driver",
+      "Pin": "3000mAh",
+      "Kích Thước": "440*132*41mm",
+      "Trọng lượng": "1.2Kg",
+      "Phụ Kiện": "Bàn phím, HDSD, Cáp,Keycap Puller, Switch Puller, Nắp chống bụi"
+    }
+  },
+  {
+    "id": "bn-phm-c-akko-mineral-02-via-black-on-white-stellar-rose",
+    "name": "Bàn phím cơ AKKO Mineral 02 VIA Black on White (Stellar Rose)",
+    "price": 3990000,
+    "originalPrice": 4990000,
+    "image": "assets/images/keyboard/Bàn phím cơ AKKO Mineral 02 VIA Black on White (Stellar Rose)/ban-phim-co-AKKO-Mineral-02-VIA-Black-on-White-Stellar-Rose.png",
+    "category": "keyboard",
+    "description": "Bàn phím cơ AKKO Mineral 02 VIA Black on White (Stellar Rose)",
+    "promotions": [
+      "Freeship toàn quốc khi đặt hàng tại Akko.vn",
+      "Bảo hành chính hãng 12 tháng",
+      "Chi nhánh bảo hành 3 miền: Bắc – Trung – Nam"
+    ],
+    "specs": {
+      "Model": "Mineral 02 VIA Black on White",
+      "Cấu Trúc": "Gasket Mount",
+      "Vỏ + Phím": "CNC Aluminum Case",
+      "Màu sắc": "Black on White",
+      "Kết Nối": "Bluetooth5.0 / 2.4GHz / USB Type-C",
+      "LED": "South-facing RGB",
+      "Switches": "Akko Stellar Rose",
+      "Design": "Curved",
+      "Hot Swappable": "Yes",
+      "Tương Thích": "Windows / macOS / iOS / Android",
+      "Keycaps": "Cherry Profile",
+      "Trình điều khiển": "VIA",
+      "Pin": "8000mAh",
+      "Kích Thước": "405*142*47mm",
+      "Trọng lượng": "2,725 Kg",
+      "Phụ Kiện": "1 sách hướng dẫn sử dụng + 1 dây USB Type-C + 1 Che bụi bàn phím + 1Key puller + USB Receiver"
+    }
   }
-},
-{
-  "id": "akko-3108-v3-black-gold",
-  "name": "Bàn phím AKKO 3108 V3 Black & Gold (Hotswap/USB Type-C/White Led)",
-  "price": 699000,
-  "originalPrice": 990000,
-  "image": ".\\assets\\images\\Bàn phím AKKO 3108 V3 Black & Gold (HotswapUSB Type-CWhite Led)\\Ban-phim-AKKO-3108-V3-Black-Gold-1.png",
-  "category": "keyboard",
-  "description": "Bàn phím cơ AKKO 3108 V3 Black & Gold với thiết kế sang trọng, hỗ trợ Hotswap và kết nối USB Type-C. Trang bị LED White và switch Akko Frost Pink mang lại trải nghiệm gõ phím tuyệt vời.",
-  "promotions": [
-    "Freeship toàn quốc khi đặt hàng tại Akko.vn",
-    "Bảo hành chính hãng 12 tháng",
-    "Chi nhánh bảo hành 3 miền: Bắc – Trung – Nam"
-  ],
-  "specs": {
-    "Model": "3108 V3 Black & Gold",
-    "Vỏ": "ABS",
-    "Màu sắc": "Black & Gold",
-    "Kết Nối": "USB Type-C",
-    "LED": "White",
-    "Switches": "Akko Frost Pink",
-    "Pin": "No",
-    "Hot Swappable": "Yes",
-    "N-Key Rollover": "Yes",
-    "Keycaps": "PBT Double Shot, Cherry Profile",
-    "Trình điều khiển": "Akko Driver",
-    "Kích Thước": "442*140*40mm",
-    "Trọng lượng": "1.2Kg",
-    "Phụ Kiện": "1 sách hướng dẫn sử dụng + 1 dây USB Type-C + 1 Che bụi bàn phím + 2 trong 1 Key puller, switch puller"
-  }
-}
 ]

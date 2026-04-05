@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="./assets/css/navbar.css" />
     <link rel="stylesheet" href="./assets/css/footer.css" />
     <link rel="stylesheet" href="./assets/css/products-dynamic.css">
+    <link rel="stylesheet" href="./assets/css/auth-modal.css">
 </head>
 
 <body>
@@ -81,9 +82,118 @@
                     <!-- ---- SIDEBAR ---- -->
                     <div class="col-lg-3">
                         <aside class="sidebar">
-                            <div class="sidebar-title"><span>Danh mục sản phẩm</span></div>
-                            <!-- JS renders sidebar menu into this <ul> -->
-                            <ul class="sidebar-menu" id="sidebar-menu"></ul>
+                            <div class="sidebar-title">
+                                <span>Danh mục sản phẩm</span>
+                            </div>
+                            <ul class="sidebar-menu">
+                                <li class="menu-item">
+                                    <input type="checkbox" id="menu-keyboard" class="menu-toggle" />
+                                    <label for="menu-keyboard" class="menu-label">
+                                        <span class="menu-icon"> Keyboard </span>
+                                        <i class="bi bi-chevron-down chevron"></i>
+                                    </label>
+                                    <ul class="sub-menu">
+                                        <li class="sub-menu-item">
+                                            <input type="checkbox" id="menu-theme"
+                                                class="menu-toggle sub-menu-toggle" />
+                                            <label for="menu-theme" class="sub-menu-label">
+                                                Chủ đề
+                                                <i class="bi bi-chevron-down chevron" style="font-size: 11px"></i>
+                                            </label>
+                                            <ul class="sub-sub-menu">
+                                                <li>
+                                                    <a href="https://akko.vn/acrylic/">ACRYLIC</a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://akko.vn/black-pink/">Black Pink</a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://akko.vn/bilibili/">BiliBili</a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://akko.vn/dragon-ball-super/">Dragon Ball Super</a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://akko.vn/dragon-ball-z/">Dragon Ball Z</a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://akko.vn/ma-honkai-impact-iii/">Mã Honkai Impact
+                                                        III</a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://akko.vn/mod-series/">MOD Series</a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://akko.vn/ma-midnight/">Mã Midnight</a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://akko.vn/matcha-red-bean/">Matcha Red Bean</a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://akko.vn/monets-pond/">Monet's Pond</a>
+                                                </li>
+                                                <li><a href="https://akko.vn/mojike/">Mojike</a></li>
+                                                <li>
+                                                    <a href="https://akko.vn/ma-ocean/">Mã Ocean</a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://akko.vn/pc-series/">PC Series</a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://akko.vn/one-piece/">One Piece</a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://akko.vn/horizon/">Horizon</a>
+                                                </li>
+                                                <li><a href="https://akko.vn/silent/">Silent</a></li>
+                                                <li>
+                                                    <a href="https://akko.vn/steam-engine/">Steam Engine</a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://akko.vn/world-tour-tokyo/">World Tour Tokyo</a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://akko.vn/world-tour-tokyo-r2/">World Tour Tokyo
+                                                        R2</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="sub-menu-item">
+                                            <input type="checkbox" id="menu-led" class="menu-toggle sub-menu-toggle" />
+                                            <label for="menu-led" class="sub-menu-label">
+                                                Kết nối &amp; Led
+                                                <i class="bi bi-chevron-down chevron" style="font-size: 11px"></i>
+                                            </label>
+                                            <ul class="sub-sub-menu">
+                                                <li>
+                                                    <a href="https://akko.vn/multi-modes/">Multi-modes</a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://akko.vn/bluetooth/">Bluetooth</a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://akko.vn/led-rgb/">Led RGB</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item menu-link">
+                                    <a href="https://akko.vn/kit-ban-phim/"> KIT Bàn phím </a>
+                                </li>
+                                <li class="menu-item menu-link">
+                                    <a href="https://akko.vn/key-cap/"> Keycap </a>
+                                </li>
+                                <li class="menu-item menu-link">
+                                    <a href="https://akko.vn/switch/"> Switch </a>
+                                </li>
+                                <li class="menu-item menu-link">
+                                    <a href="https://akko.vn/mouse/"> Mouse </a>
+                                </li>
+                                <li class="menu-item menu-link">
+                                    <a href="https://akko.vn/phu-kien/"> Phụ kiện </a>
+                                </li>
+                            </ul>
                         </aside>
                     </div>
 
@@ -161,6 +271,7 @@
 
     <script src="./assets/js/product-detail.js"></script>
     <script src="./assets/js/auth.js"></script>
+    <script src="./assets/js/cart.js"></script>
 
 </body>
 

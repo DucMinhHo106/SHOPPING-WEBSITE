@@ -246,6 +246,7 @@ main {
     max-width: 300px;
     text-align: center;
     transition: opacity 0.3s ease;
+    height: 320px;
 }
 
 .product-card:hover {

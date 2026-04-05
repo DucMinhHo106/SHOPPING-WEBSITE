@@ -37,24 +37,24 @@ function renderProductDetail(product, container) {
   // Update page title
   document.title = `Akko | ${product.name}`;
 
-  const discount = product.originalPrice
-    ? Math.round((1 - product.price / product.originalPrice) * 100)
-    : null;
+  const discount = product.originalPrice ?
+    Math.round((1 - product.price / product.originalPrice) * 100) :
+    null;
 
   // Build promotions list
-  const promoHTML = product.promotions && product.promotions.length
-    ? `<ul>${product.promotions.map(p => `<li>${escapeHtml(p)}</li>`).join('')}</ul>`
-    : '';
+  const promoHTML = product.promotions && product.promotions.length ?
+    `<ul>${product.promotions.map(p => `<li>${escapeHtml(p)}</li>`).join('')}</ul>` :
+    '';
 
   // Build specs table
-  const specsHTML = product.specs
-    ? Object.entries(product.specs).map(([key, val]) => `
+  const specsHTML = product.specs ?
+    Object.entries(product.specs).map(([key, val]) => `
         <tr>
           <td class="table-label">${escapeHtml(key)}</td>
           <td>${escapeHtml(val)}</td>
         </tr>
-      `).join('')
-    : '';
+      `).join('') :
+    '';
 
   container.innerHTML = `
     <div class="row row-large">
@@ -161,6 +161,24 @@ function renderProductDetail(product, container) {
       </div>
     </div>
   `;
+
+  const btn = container.querySelector('.add-to-cart-btn');
+
+  if (btn) {
+    btn.addEventListener('click', () => {
+      const qty = parseInt(document.getElementById('qty-input').value) || 1;
+
+      addToCart({
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        image: product.image,
+        quantity: qty
+      });
+
+      alert('✅ Đã thêm vào giỏ hàng');
+    });
+  }
 }
 
 function changeQty(delta) {

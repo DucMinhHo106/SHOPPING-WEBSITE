@@ -14,7 +14,6 @@ async function loadProducts() {
 }
 
 function renderProducts(products) {
-  // Group by category
   const grouped = {};
   products.forEach(product => {
     const cat = product.category || 'other';
@@ -26,10 +25,7 @@ function renderProducts(products) {
     const section = document.getElementById(category);
     if (!section) return;
 
-    // Build section HTML
-    let html = `
-      <div class="product-grid">
-    `;
+    let html = `<div class="product-grid">`;
 
     grouped[category].forEach(product => {
       const discount = product.originalPrice
@@ -57,7 +53,9 @@ function renderProducts(products) {
       `;
     });
 
-    section.innerHTML += html;
+    html += `</div>`;
+
+    section.insertAdjacentHTML('beforeend', html);
   });
 }
 
