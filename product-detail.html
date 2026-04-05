@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="./assets/css/products-detail.css" />
     <link rel="stylesheet" href="./assets/css/navbar.css" />
     <link rel="stylesheet" href="./assets/css/footer.css" />
+    <link rel="stylesheet" href="./assets/css/products-dynamic.css">
 </head>
 
 <body>
@@ -62,7 +63,7 @@
                     <a href="#" class="login-link" data-bs-toggle="modal" data-bs-target="#authModal">
                         | ĐĂNG NHẬP
                     </a>
-                    <a href="#" class="cart-icon">
+                    <a href="./cart.html" class="cart-icon">
                         <img src="./assets/icons/cart.jpg" alt="Cart">
                     </a>
                 </div>
@@ -88,22 +89,9 @@
 
                     <!-- ---- PRODUCT MAIN ---- -->
                     <div class="col-lg-9 product-main">
-                        <div class="row">
-
-                            <!-- Gallery column: JS injects radio inputs + images + thumbnails -->
-                            <div class="col-lg-6">
-                                <div class="product-gallery" id="product-gallery"></div>
-                                <div class="thumbnail-container" id="thumbnail-container"></div>
-                            </div>
-
-                            <!-- Info column: JS injects title, price, promo, quantity, stores, share -->
-                            <div class="product-info" id="product-info"></div>
-
+                        <div id="product-detail-dynamic">
+                            <!-- Product loaded dynamically by product-detail.js -->
                         </div>
-
-                        <!-- Tabs: JS injects description images, specs table, reviews, related products -->
-                        <div class="product-tabs" id="product-tabs"></div>
-
                     </div>
                 </div>
             </div>
@@ -172,7 +160,6 @@
     <script src="./assets/js/product-detail-data.js"></script>
 
     <script src="./assets/js/product-detail.js"></script>
-    <script src="./assets/js/details.js"></script>
     <script src="./assets/js/auth.js"></script>
 
 </body>

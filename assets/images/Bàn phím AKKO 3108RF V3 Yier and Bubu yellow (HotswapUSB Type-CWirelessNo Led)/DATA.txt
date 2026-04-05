@@ -1,0 +1,15 @@
+THÔNG SỐ KĨ THUẬT
+Model	3108RF V3 Yier and Bubu
+Vỏ	ABS
+Màu sắc	Yellow
+Kết Nối	USB Type-C/Wireless
+LED	No
+Switches	Akko Frost Pink
+Pin	AAA
+Hot Swappable	Yes
+N-Key Rollover	Yes
+Keycaps	PBT Dye-Sublimation , MOA Profile
+Trình điều khiển	Akko Driver
+Kích Thước	442*140*40mm
+Trọng lượng	1.2Kg
+Phụ Kiện	1 sách hướng dẫn sử dụng + 1 dây USB Type-C + 1 Che bụi bàn phím + 2 trong 1 Key puller ,switch puller

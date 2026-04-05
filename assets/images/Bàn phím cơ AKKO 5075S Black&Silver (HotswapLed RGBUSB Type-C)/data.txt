@@ -1,0 +1,16 @@
+THÔNG SỐ KĨ THUẬT
+Model	5075S Black&Silver
+Cấu Trúc	Gasket Mount
+Vỏ	ABS
+Màu sắc	Black&Silver
+Kết Nối	USB Type-C
+LED	RGB
+Switches	 Akko Frost Pink
+Hot Swappable	Yes
+N-Key Rollover	Yes
+Keycaps	PBT Double Shot , Cherry Profile
+Trình điều khiển	Akko Cloud Driver
+Side-Printed	Yes
+Kích Thước	335*146*42mm
+Trọng lượng	1.2Kg
+Phụ Kiện	1 sách hướng dẫn sử dụng + 1 dây USB Type-C + 1 Che bụi bàn phím +  Key puller ,switch puller

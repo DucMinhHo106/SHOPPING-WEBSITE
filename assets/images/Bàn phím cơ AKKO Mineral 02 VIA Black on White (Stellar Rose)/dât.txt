@@ -1,0 +1,17 @@
+THÔNG SỐ KĨ THUẬT
+Model	Mineral 02 VIA Black on White
+Cấu Trúc	Gasket Mount
+Vỏ + Phím	CNC Aluminum Case
+Màu sắc	Black on White
+Kết Nối	Bluetooth5.0 / 2.4GHz / USB Type-C
+LED	South-facing RGB
+Switches	Akko Stellar Rose
+Design	Curved
+Hot Swappable	Yes
+Tương Thích	Windows / macOS / iOS / Android
+Keycaps	Cherry Profile
+Trình điều khiển	VIA
+Pin	8000mAh
+Kích Thước	405*142*47mm
+Trọng lượng	2,725 Kg
+Phụ Kiện	1 sách hướng dẫn sử dụng + 1 dây USB Type-C + 1 Che bụi bàn phím + 1Key puller + USB Receiver

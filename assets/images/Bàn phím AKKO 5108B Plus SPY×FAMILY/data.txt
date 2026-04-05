@@ -1,0 +1,17 @@
+THÔNG SỐ KĨ THUẬT
+Model	5108B Plus SPY×FAMILY
+Cấu Trúc	Gasket Mount
+Vỏ	ABS
+Màu sắc	SPY×FAMILY
+Kết Nối	USB Type-C, 2.4G / Bluetooth
+LED	RGB
+Switches	Akko V3 Piano pro
+Pin	3000 mAh
+Hot Swappable	Yes
+N-Key Rollover	Yes
+Keycaps	PBT Double Shot , MOA Profile
+Trình điều khiển	Akko Cloud Driver
+Side-Printed	Yes
+Kích Thước	442*132*41mm
+Trọng lượng	1.27Kg
+Phụ Kiện	1 sách hướng dẫn sử dụng + 1 dây USB Type-C + 1 Che bụi bàn phím + 2 trong 1 Key puller ,switch puller

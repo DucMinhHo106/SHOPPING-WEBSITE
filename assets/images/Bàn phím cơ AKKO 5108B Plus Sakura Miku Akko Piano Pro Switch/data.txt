@@ -1,0 +1,17 @@
+THÔNG SỐ KĨ THUẬT
+Model	AKKO 5108B Plus Sakura Miku
+Cấu Trúc	Gasket Mount
+Vỏ + Phím	PBT Keycaps
+Màu sắc	Sakura Miku
+Kết Nối	Bluetooth 5.0 / 2.4GHz / USB Type-C
+LED	South-facing RGB
+N-Key Rollover	Support
+Switches	Akko V3 Piano Pro
+Hot Swappable	3-Pin / 5-Pin Support
+Polling Rate	1000Hz In wired and 2.4G mode, 125Hz in Bluetooth mode.
+Keycaps	Cherry Profile
+Trình điều khiển	Akko Cloud Driver
+Pin	3000mAh
+Kích Thước	440*132*41mm
+Trọng lượng	1.2Kg
+Phụ Kiện	Bàn phím, HDSD, Cáp,Keycap Puller, Switch Puller, Nắp chống bụi
