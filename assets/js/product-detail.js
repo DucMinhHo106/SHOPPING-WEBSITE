@@ -162,10 +162,10 @@ function renderProductDetail(product, container) {
     </div>
   `;
 
-  const btn = container.querySelector('.add-to-cart-btn');
+  container.addEventListener('click', (e) => {
+    if (e.target.closest('.add-to-cart-btn')) {
+      console.log("CLICKED");
 
-  if (btn) {
-    btn.addEventListener('click', () => {
       const qty = parseInt(document.getElementById('qty-input').value) || 1;
 
       addToCart({
@@ -176,9 +176,9 @@ function renderProductDetail(product, container) {
         quantity: qty
       });
 
-      alert('✅ Đã thêm vào giỏ hàng');
-    });
-  }
+      console.log("AFTER ADD:", getCart());
+    }
+  });
 }
 
 function changeQty(delta) {

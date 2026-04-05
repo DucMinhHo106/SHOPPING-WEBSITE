@@ -1,73 +1,59 @@
-// assets/js/cart-page.js
-
 function formatPrice(num) {
-    return num.toLocaleString('vi-VN') + '₫';
+  return num.toLocaleString('vi-VN') + '₫';
 }
 
 function renderCart() {
-    const cart = getCart();
-    const container = document.getElementById('cart-items');
+  const cart = getCart();
+  const container = document.getElementById('cart-items');
 
-    if (!container) return;
+  if (!container) {
+    console.log("Không tìm thấy #cart-items");
+    return;
+  }
 
-    if (cart.length === 0) {
-        container.innerHTML = "<p>Giỏ hàng trống</p>";
+  if (cart.length === 0) {
+    container.innerHTML = "<p style=\"text-align: center; padding-top: 20px;\">🛒 Giỏ hàng trống</p>";
+    document.getElementById("js-cart-total").textContent = "0₫";
+    document.getElementById("js-cart-subtotal").textContent = "0₫";
+    return;
+  }
 
-        document.getElementById("js-cart-total").textContent = "0₫";
-        document.getElementById("js-cart-subtotal").textContent = "0₫";
+  let html = "";
 
-        return;
-    }
-
-    let html = "";
-
-    cart.forEach(item => {
-        html += `
+  cart.forEach(item => {
+    html += `
       <div class="cart-item">
-        <button class="cart-remove" onclick="removeItem('${item.id}')">×</button>
+        <button onclick="removeItem('${item.id}')">×</button>
 
-        <div class="cart-product">
-          <img class="cart-image" src="../${item.image}" />
-          <span class="cart-name">${item.name}</span>
-        </div>
+        <img src="../${item.image}" width="60">
+        <span>${item.name}</span>
 
-        <div class="cart-price">
-          ${formatPrice(item.price)}
-        </div>
+        <span>${formatPrice(item.price)}</span>
 
-        <div class="cart-qty">
-          <button onclick="changeQty('${item.id}', -1)">−</button>
-          <span>${item.quantity}</span>
-          <button onclick="changeQty('${item.id}', 1)">+</button>
-        </div>
+        <button onclick="changeQty('${item.id}', -1)">-</button>
+        <span>${item.quantity}</span>
+        <button onclick="changeQty('${item.id}', 1)">+</button>
 
-        <div class="cart-subtotal">
-          ${formatPrice(item.price * item.quantity)}
-        </div>
+        <span>${formatPrice(item.price * item.quantity)}</span>
       </div>
     `;
-    });
+  });
 
-    container.innerHTML = html;
+  container.innerHTML = html;
 
-    // update total
-    const total = getCartTotal();
-
-    document.getElementById("js-cart-total").textContent = formatPrice(total);
-    document.getElementById("js-cart-subtotal").textContent = formatPrice(total);
+  const total = getCartTotal();
+  document.getElementById("js-cart-total").textContent = formatPrice(total);
+  document.getElementById("js-cart-subtotal").textContent = formatPrice(total);
 }
 
-// ===== actions =====
-
 function removeItem(id) {
-    removeFromCart(id);
-    renderCart();
+  removeFromCart(id);
+  renderCart();
 }
 
 function changeQty(id, delta) {
-    updateQuantity(id, delta);
-    renderCart();
+  updateQuantity(id, delta);
+  renderCart();
 }
 
-// ===== init =====
 document.addEventListener("DOMContentLoaded", renderCart);

@@ -8,69 +8,47 @@
 
 const CART_KEY = "akko_cart";
 
-// ─── Core Storage Functions ───────────────────────────────────────────────────
-
-/**
- * Retrieves the current cart from localStorage.
- * @returns {Array} Array of cart item objects
- */
 const getCart = () => {
     try {
         const raw = localStorage.getItem(CART_KEY);
         return raw ? JSON.parse(raw) : [];
-    } catch (e) {
+    } 
+    catch (e) {
         console.error("getCart error:", e);
         return [];
     }
 };
 
-/**
- * Persists the cart array to localStorage.
- * @param {Array} cart
- */
 const saveCart = (cart) => {
-    try {
-        localStorage.setItem(CART_KEY, JSON.stringify(cart));
-        updateCartBadge(); // sync badge every time cart changes
-    } catch (e) {
-        console.error("saveCart error:", e);
-    }
+    console.log("Saving:", cart);
+
+    localStorage.setItem(CART_KEY, JSON.stringify(cart));
 };
 
-/**
- * Adds a product to the cart. If the product already exists, increments quantity.
- * @param {Object} product - must have at least { id, name, price, image }
- */
 const addToCart = (product) => {
     const cart = getCart();
     const existing = cart.find((item) => item.id === product.id);
 
     if (existing) {
-        existing.quantity += product.quantity || 1; // ✅ FIX
-    } else {
+        existing.quantity += product.quantity || 1;
+        existing.price = product.price;
+    } 
+    else {
         cart.push({
             ...product,
-            quantity: product.quantity || 1 // ✅ FIX
+            quantity: product.quantity || 1
         });
+        alert("Cập nhật giỏ hàng thành công");
     }
 
     saveCart(cart);
 };
 
-/**
- * Removes a product from the cart by its id.
- * @param {string} id - product id
- */
 const removeFromCart = (id) => {
     const cart = getCart().filter((item) => item.id !== id);
     saveCart(cart);
 };
 
-/**
- * Updates the quantity of a cart item. Removes item if quantity drops to 0.
- * @param {string} id
- * @param {number} delta - positive to increment, negative to decrement
- */
 const updateQuantity = (id, delta) => {
     const cart = getCart();
     const item = cart.find((i) => i.id === id);
@@ -96,10 +74,6 @@ const clearCart = () => {
 
 // ─── UI Helpers ───────────────────────────────────────────────────────────────
 
-/**
- * Updates all elements with class "cart-badge" with the current item count.
- * Call this after any cart mutation or on page load.
- */
 const updateCartBadge = () => {
     const cart = getCart();
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
@@ -109,12 +83,6 @@ const updateCartBadge = () => {
     });
 };
 
-/**
- * Parses a Vietnamese price string to a plain number.
- * e.g. "2.990.000₫" → 2990000
- * @param {string} priceStr
- * @returns {number}
- */
 const parsePriceVN = (priceStr) =>
     parseInt(priceStr.replace(/[^\d]/g, ""), 10) || 0;
 
