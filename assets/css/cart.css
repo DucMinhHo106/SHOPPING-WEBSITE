@@ -5,7 +5,7 @@
 }
 
 body {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1.6;
     color: #777;
     min-height: 500px;
@@ -14,7 +14,6 @@ body {
 .container {
     max-width: 1270px;
     margin: 0 auto;
-    padding: 15px 0;
 }
 
 .home {
