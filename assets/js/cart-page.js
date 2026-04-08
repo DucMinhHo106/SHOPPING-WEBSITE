@@ -25,7 +25,7 @@ function renderCart() {
       <div class="cart-item">
         <button onclick="removeItem('${item.id}')">×</button>
 
-        <img src="../${item.image}" width="60">
+        <img src="${item.image}" width="60">
         <span>${item.name}</span>
 
         <span>${formatPrice(item.price)}</span>

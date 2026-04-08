@@ -4,7 +4,7 @@
     "name": "Bàn phím AKKO 3108 V3 Black & Gold (Hotswap/USB Type-C/White Led)",
     "price": 699000,
     "originalPrice": 990000,
-    "image": "/SHOPPING-WEBSITE/assets/images/keyboard/1-AKKO3108V3-Black-Gold/Ban-phim-AKKO-3108-V3-Black-Gold-1.png",
+    "image": "assets/images/keyboard/1-AKKO3108V3-Black-Gold/Ban-phim-AKKO-3108-V3-Black-Gold-1.png",
     "category": "keyboard",
     "description": "Bàn phím AKKO 3108 V3 Black & Gold (Hotswap/USB Type-C/White Led)",
     "promotions": [
@@ -183,7 +183,7 @@
     "name": "Bàn phím cơ AKKO 5075S Black on White (Hotswap/Led RGB/USB Type-C)",
     "price": 690000,
     "originalPrice": 790000,
-    "image": "assets/images/keyboard/AKKO-5075S Black-Silver (HotswapLed_RGBUSB_Type-C)/Ban-phim-co-AKKO-5075S-BlackSilver.png",
+    "image": "assets/images/keyboard/AKKO-5075S Black-Silver(HotswapLed_RGBUSB_Type-C)/Ban-phim-co-AKKO-5075S-BlackSilver.png",
     "category": "keyboard",
     "description": "Bàn phím cơ AKKO 5075S Black on White (Hotswap/Led RGB/USB Type-C)",
     "promotions": [
