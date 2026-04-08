@@ -4,7 +4,7 @@
     "name": "Bàn phím AKKO 3108 V3 Black & Gold (Hotswap/USB Type-C/White Led)",
     "price": 699000,
     "originalPrice": 990000,
-    "image": "assets/images/keyboard/1 AKKO3108V3 Black & Gold/Ban-phim-AKKO-3108-V3-Black-Gold-1.png",
+    "image": "/SHOPPING-WEBSITE/assets/images/keyboard/1-AKKO3108V3-Black-Gold/Ban-phim-AKKO-3108-V3-Black-Gold-1.png",
     "category": "keyboard",
     "description": "Bàn phím AKKO 3108 V3 Black & Gold (Hotswap/USB Type-C/White Led)",
     "promotions": [
@@ -34,7 +34,7 @@
     "name": "Bàn phím AKKO 3108 V3 Glacier (Hotswap/USB Type-C/White Led)",
     "price": 799000,
     "originalPrice": 990000,
-    "image": "assets/images/keyboard/2 AKKO3108V3 Glacier/Ban-phim-AKKO-3108-V3-Glacier.png",
+    "image": "assets/images/keyboard/2-AKKO3108V3-Glacier/Ban-phim-AKKO-3108-V3-Glacier.png",
     "category": "keyboard",
     "description": "Bàn phím AKKO 3108 V3 Glacier (Hotswap/USB Type-C/White Led)",
     "promotions": [
@@ -64,7 +64,7 @@
     "name": "Bàn phím AKKO 3108 V3 Yier and Bubu Pink (Hotswap/USB Type-C/White Led)",
     "price": 1099000,
     "originalPrice": 1290000,
-    "image": "assets/images/keyboard/3 AKKO3108V3 Yier and Bubu Pink/Ban-phim-AKKO-3108-V3-Yier-and-Bubu-Pink.png",
+    "image": "assets/images/keyboard/3-AKKO3108V3-Yier-Bubu-Pink/Ban-phim-AKKO-3108-V3-Yier-and-Bubu-Pink.png",
     "category": "keyboard",
     "description": "Bàn phím AKKO 3108 V3 Yier and Bubu Pink (Hotswap/USB Type-C/White Led)",
     "promotions": [
@@ -93,7 +93,7 @@
     "name": "Bàn phím AKKO 3108RF V3 Black & Gold (Hotswap/USB Type-C/Wireless/No Led)",
     "price": 799000,
     "originalPrice": 1190000,
-    "image": "assets/images/keyboard/4 AKKO3108RFV3 Black & Gold/Ban-phim-AKKO-3108RF-V3-Black-Gold.png",
+    "image": "assets/images/keyboard/4-AKKO3108RFV3-Black-Gold/Ban-phim-AKKO-3108RF-V3-Black-Gold.png",
     "category": "keyboard",
     "description": "Bàn phím AKKO 3108RF V3 Black & Gold (Hotswap/USB Type-C/Wireless/No Led)",
     "promotions": [
@@ -123,7 +123,7 @@
     "name": "Bàn phím AKKO 3108RF V3 Glacier (Hotswap/USB Type-C/Wireless/No Led)",
     "price": 799000,
     "originalPrice": 1190000,
-    "image": "assets/images/keyboard/5 AKKO3108RFV3 Glacier/Ban-phim-AKKO-3108RF-V3-Glacier.png",
+    "image": "assets/images/keyboard/5-AKKO3108RFV3-Glacier/Ban-phim-AKKO-3108RF-V3-Glacier.png",
     "category": "keyboard",
     "description": "Bàn phím AKKO 3108RF V3 Glacier (Hotswap/USB Type-C/Wireless/No Led)",
     "promotions": [
@@ -153,7 +153,7 @@
     "name": "Bàn phím AKKO 3108RF V3 Yier and Bubu yellow (Hotswap/USB Type-C/Wireless/No Led)",
     "price": 1199000,
     "originalPrice": 1390000,
-    "image": "assets/images/keyboard/6 AKKO3108RFV3 Yier and Bubu yellow/Ban-phim-AKKO-3108RF-V3-Yier-and-Bubu-yellow.png",
+    "image": "assets/images/keyboard/6-AKKO3108RFV3-Yier-Bubu-yellow/Ban-phim-AKKO-3108RF-V3-Yier-and-Bubu-yellow.png",
     "category": "keyboard",
     "description": "Bàn phím AKKO 3108RF V3 Yier and Bubu yellow (Hotswap/USB Type-C/Wireless/No Led)",
     "promotions": [
@@ -179,43 +179,11 @@
     }
   },
   {
-    "id": "bn-phm-akko-5108b-plus-spyfamily",
-    "name": "Bàn phím AKKO 5108B Plus SPY×FAMILY",
-    "price": 2099000,
-    "originalPrice": 2499000,
-    "image": "assets/images/keyboard/Bàn phím AKKO 5108B Plus SPY×FAMILY/Ban-phim-AKKO-5108B-Plus-SPY×FAMILY.png",
-    "category": "keyboard",
-    "description": "Bàn phím AKKO 5108B Plus SPY×FAMILY",
-    "promotions": [
-      "Freeship toàn quốc khi đặt hàng tại Akko.vn",
-      "Bảo hành chính hãng 12 tháng",
-      "Chi nhánh bảo hành 3 miền: Bắc – Trung – Nam"
-    ],
-    "specs": {
-      "Model": "5108B Plus SPY×FAMILY",
-      "Cấu Trúc": "Gasket Mount",
-      "Vỏ": "ABS",
-      "Màu sắc": "SPY×FAMILY",
-      "Kết Nối": "USB Type-C, 2.4G / Bluetooth",
-      "LED": "RGB",
-      "Switches": "Akko V3 Piano pro",
-      "Pin": "3000 mAh",
-      "Hot Swappable": "Yes",
-      "N-Key Rollover": "Yes",
-      "Keycaps": "PBT Double Shot , MOA Profile",
-      "Trình điều khiển": "Akko Cloud Driver",
-      "Side-Printed": "Yes",
-      "Kích Thước": "442*132*41mm",
-      "Trọng lượng": "1.27Kg",
-      "Phụ Kiện": "1 sách hướng dẫn sử dụng + 1 dây USB Type-C + 1 Che bụi bàn phím + 2 trong 1 Key puller ,switch puller"
-    }
-  },
-  {
     "id": "bn-phm-c-akko-5075s-black-on-white-hotswapled-rgbusb-typec",
     "name": "Bàn phím cơ AKKO 5075S Black on White (Hotswap/Led RGB/USB Type-C)",
     "price": 690000,
     "originalPrice": 790000,
-    "image": "assets/images/keyboard/Bàn phím cơ AKKO 5075S Black&Silver (HotswapLed RGBUSB Type-C)/Ban-phim-co-AKKO-5075S-BlackSilver.png",
+    "image": "assets/images/keyboard/AKKO-5075S Black-Silver (HotswapLed_RGBUSB_Type-C)/Ban-phim-co-AKKO-5075S-BlackSilver.png",
     "category": "keyboard",
     "description": "Bàn phím cơ AKKO 5075S Black on White (Hotswap/Led RGB/USB Type-C)",
     "promotions": [
@@ -246,7 +214,7 @@
     "name": "Bàn phím cơ AKKO 5108B Plus Sakura Miku Akko Piano Pro Switch",
     "price": 1999000,
     "originalPrice": 2490000,
-    "image": "assets/images/keyboard/Bàn phím cơ AKKO 5108B Plus Sakura Miku Akko Piano Pro Switch/Ban-phim-co-AKKO-5108B-Plus-Sakura-Miku-Akko-Piano-Pro-Switch-1.png",
+    "image": "assets/images/keyboard/AKKO-5108B-Plus Sakura-Miku-Akko-Piano-Pro-Switch/Ban-phim-co-AKKO-5108B-Plus-Sakura-Miku-Akko-Piano-Pro-Switch-1.png",
     "category": "keyboard",
     "description": "Bàn phím cơ AKKO 5108B Plus Sakura Miku Akko Piano Pro Switch",
     "promotions": [
@@ -274,11 +242,43 @@
     }
   },
   {
+    "id": "bn-phm-akko-5108b-plus-spyfamily",
+    "name": "Bàn phím AKKO 5108B Plus SPY×FAMILY",
+    "price": 2099000,
+    "originalPrice": 2499000,
+    "image": "assets/images/keyboard/AKKO-5108B-Plus-SPY×FAMILY/Ban-phim-AKKO-5108B-Plus-SPY×FAMILY.png",
+    "category": "keyboard",
+    "description": "Bàn phím AKKO 5108B Plus SPY×FAMILY",
+    "promotions": [
+      "Freeship toàn quốc khi đặt hàng tại Akko.vn",
+      "Bảo hành chính hãng 12 tháng",
+      "Chi nhánh bảo hành 3 miền: Bắc – Trung – Nam"
+    ],
+    "specs": {
+      "Model": "5108B Plus SPY×FAMILY",
+      "Cấu Trúc": "Gasket Mount",
+      "Vỏ": "ABS",
+      "Màu sắc": "SPY×FAMILY",
+      "Kết Nối": "USB Type-C, 2.4G / Bluetooth",
+      "LED": "RGB",
+      "Switches": "Akko V3 Piano pro",
+      "Pin": "3000 mAh",
+      "Hot Swappable": "Yes",
+      "N-Key Rollover": "Yes",
+      "Keycaps": "PBT Double Shot , MOA Profile",
+      "Trình điều khiển": "Akko Cloud Driver",
+      "Side-Printed": "Yes",
+      "Kích Thước": "442*132*41mm",
+      "Trọng lượng": "1.27Kg",
+      "Phụ Kiện": "1 sách hướng dẫn sử dụng + 1 dây USB Type-C + 1 Che bụi bàn phím + 2 trong 1 Key puller ,switch puller"
+    }
+  },
+  {
     "id": "bn-phm-c-akko-mineral-02-via-black-on-white-stellar-rose",
     "name": "Bàn phím cơ AKKO Mineral 02 VIA Black on White (Stellar Rose)",
     "price": 3990000,
     "originalPrice": 4990000,
-    "image": "assets/images/keyboard/Bàn phím cơ AKKO Mineral 02 VIA Black on White (Stellar Rose)/ban-phim-co-AKKO-Mineral-02-VIA-Black-on-White-Stellar-Rose.png",
+    "image": "assets/images/keyboard/AKKO-Mineral-02 VIA-Black_on_White(Stellar Rose)/ban-phim-co-AKKO-Mineral-02-VIA-Black-on-White-Stellar-Rose.png",
     "category": "keyboard",
     "description": "Bàn phím cơ AKKO Mineral 02 VIA Black on White (Stellar Rose)",
     "promotions": [
