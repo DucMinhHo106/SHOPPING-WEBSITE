@@ -165,7 +165,7 @@ function renderProductDetail(product, container) {
   container.addEventListener('click', (e) => {
     if (e.target.closest('.add-to-cart-btn')) {
       console.log("CLICKED");
-
+      alert("Cập nhật giỏ hàng thành công");
       const qty = parseInt(document.getElementById('qty-input').value) || 1;
 
       addToCart({
@@ -175,7 +175,6 @@ function renderProductDetail(product, container) {
         image: product.image,
         quantity: qty
       });
-
       console.log("AFTER ADD:", getCart());
     }
   });
