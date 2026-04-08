@@ -92,9 +92,8 @@
     height: auto;
 }
 
-#header-right {
+.header-right {
     align-items: center;
     display: flex;
     gap: 12px;
-
 }
