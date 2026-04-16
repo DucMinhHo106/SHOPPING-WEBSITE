@@ -4,7 +4,7 @@
 
 async function loadProducts() {
   try {
-    const response = await fetch('./data/products.json');
+    const response = await fetch('../data/products.json');
     if (!response.ok) throw new Error('Failed to load products.json');
     const products = await response.json();
     renderProducts(products);
@@ -33,7 +33,7 @@ function renderProducts(products) {
         : null;
 
       html += `
-        <a class="product-card-link" href="./product-detail.html?id=${encodeURIComponent(product.id)}">
+        <a class="product-card-link" href="../html/product-detail.html?id=${encodeURIComponent(product.id)}">
           <div class="product-card">
             ${discount ? `<div class="product-badge">-${discount}%</div>` : ''}
             <div class="product-card-image">

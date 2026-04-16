@@ -14,7 +14,7 @@ async function loadProductDetail() {
   }
 
   try {
-    const response = await fetch('./data/products.json');
+    const response = await fetch('../data/products.json');
     if (!response.ok) throw new Error('Network error');
     const products = await response.json();
 
@@ -78,9 +78,9 @@ function renderProductDetail(product, container) {
       <div class="col-lg-6">
         <div class="product-info">
           <nav class="breadcrumb-list">
-            <a href="./index.html">Trang chủ</a>
+            <a href="../index.html">Trang chủ</a>
             <span class="divider">/</span>
-            <a href="./products.html">${escapeHtml(getCategoryLabel(product.category))}</a>
+            <a href="../html/products.html">${escapeHtml(getCategoryLabel(product.category))}</a>
           </nav>
 
           <h1 class="product-title">${escapeHtml(product.name)}</h1>
@@ -121,7 +121,7 @@ function renderProductDetail(product, container) {
           </div>
 
           <div class="category-info">
-            <span>Danh mục: <a href="./products.html#${product.category}">${escapeHtml(getCategoryLabel(product.category))}</a></span>
+            <span>Danh mục: <a href="../html/products.html#${product.category}">${escapeHtml(getCategoryLabel(product.category))}</a></span>
           </div>
         </div>
       </div>

@@ -13,7 +13,6 @@
 .carousel-item img {
     width: 100%;
     height: 498px;
-    object-fit: cover;
     transition: transform 0.5s ease;
 }
 

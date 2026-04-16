@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 // ====== CONFIG ======
-const ROOT_DIR = './assets/images/keyboard'; // thư mục chứa tất cả sản phẩm
+const ROOT_DIR = '../assets/images/keyboard';
 const OUTPUT_FILE = 'products.json';
 
 // ====== PARSE GIÁ ======
@@ -69,7 +69,7 @@ folders.forEach(folder => {
     );
 
     if (!giaFile || !dataFile || !imageFile) {
-      console.log(`❌ Thiếu file trong: ${folder}`);
+      console.log(`Thiếu file trong: ${folder}`);
       return;
     }
 
@@ -94,14 +94,14 @@ folders.forEach(folder => {
     };
 
     products.push(product);
-    console.log(`✅ Done: ${folder}`);
+    console.log(`Done: ${folder}`);
 
   } catch (err) {
-    console.log(`❌ Error folder ${folder}:`, err.message);
+    console.log(`Error folder ${folder}:`, err.message);
   }
 });
 
 // ====== SAVE ======
 fs.writeFileSync(OUTPUT_FILE, JSON.stringify(products, null, 2));
 
-console.log("\n🚀 DONE ALL → products.json");
+console.log("\n DONE ALL → products.json");
