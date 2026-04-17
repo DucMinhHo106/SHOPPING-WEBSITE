@@ -153,8 +153,26 @@ function renderProductDetail(product, container) {
           <div class="tab-content" id="reviews">
             <div class="review-container">
               <h3 class="review-heading">Đánh giá</h3>
-              <p class="no-reviews-text">Chưa có đánh giá nào.</p>
-              <p>Chỉ những khách hàng đã đăng nhập và mua sản phẩm này mới có thể đưa ra đánh giá.</p>
+
+              <div id="review-list"></div>
+
+              <div class="review-form mt-3">
+                <input id="review-name" class="form-control mb-2" placeholder="Tên của bạn">
+                
+                <select id="review-rating" class="form-control mb-2">
+                  <option value="5">5 sao</option>
+                  <option value="4">4 sao</option>
+                  <option value="3">3 sao</option>
+                  <option value="2">2 sao</option>
+                  <option value="1">1 sao</option>
+                </select>
+
+                <textarea id="review-content" class="form-control mb-2" placeholder="Nhận xét"></textarea>
+
+                <button class="btn btn-dark" onclick="addReview('${product.id}')">
+                  Gửi đánh giá
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -178,6 +196,9 @@ function renderProductDetail(product, container) {
       console.log("AFTER ADD:", getCart());
     }
   });
+
+  
+  renderReviews(product.id);
 }
 
 function changeQty(delta) {
@@ -212,3 +233,67 @@ function escapeHtml(str) {
 }
 
 document.addEventListener('DOMContentLoaded', loadProductDetail);
+
+function getReviews(productId) {
+  return JSON.parse(localStorage.getItem("reviews_" + productId)) || [];
+}
+
+function saveReviews(productId, data) {
+  localStorage.setItem("reviews_" + productId, JSON.stringify(data));
+}
+
+function renderReviews(productId) {
+  const list = document.getElementById("review-list");
+  const reviews = getReviews(productId);
+
+  if (!list) return;
+
+  if (reviews.length === 0) {
+    list.innerHTML = `<p class="no-reviews-text">Chưa có đánh giá nào.</p>`;
+  } else {
+    list.innerHTML = reviews.map(r => {
+      let stars = "";
+      for (let i = 0; i < r.rating; i++) {
+        stars += `<i class="fa fa-star"></i>`;
+      }
+
+      return `
+        <div class="review-item">
+          <strong>${r.name}</strong>
+          <div>${stars}</div>
+          <p>${r.content}</p>
+        </div>
+      `;
+    }).join('');
+  }
+
+  const label = document.querySelector('label[for="tab-reviews"] .name');
+  if (label) {
+    label.innerText = `Đánh giá (${reviews.length})`;
+  }
+}
+
+function addReview(productId) {
+  const name = document.getElementById("review-name").value;
+  const rating = document.getElementById("review-rating").value;
+  const content = document.getElementById("review-content").value;
+
+  if (!name || !content) {
+    alert("Nhập đầy đủ thông tin!");
+    return;
+  }
+
+  const reviews = getReviews(productId);
+
+  reviews.unshift({
+    name,
+    rating: parseInt(rating),
+    content
+  });
+
+  saveReviews(productId, reviews);
+  renderReviews(productId);
+
+  document.getElementById("review-name").value = "";
+  document.getElementById("review-content").value = "";
+}
