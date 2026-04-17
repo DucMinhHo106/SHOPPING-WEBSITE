@@ -47,7 +47,7 @@ function renderProducts(products, filterCategory = null) {
         <div class="product-card">
           ${discount ? `<div class="product-badge">-${discount}%</div>` : ''}
           <div class="product-card-image">
-            <img src="${product.image}" alt="${escapeHtml(product.name)}" loading="lazy" />
+            <img src="..${product.image}" alt="${escapeHtml(product.name)}" loading="lazy" />
           </div>
           <div class="product-card-body">
             <h5 class="product-card-title">${escapeHtml(product.name)}</h5>
