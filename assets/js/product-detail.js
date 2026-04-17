@@ -65,7 +65,7 @@ function renderProductDetail(product, container) {
           <div class="main-image-container">
             <div class="main-image-wrapper">
               <img
-                src="${product.image}"
+                src="..${product.image}"
                 alt="${escapeHtml(product.name)}"
                 class="main-image main-image-1"
               />
