@@ -2,58 +2,65 @@
 // Fetches products from /data/products.json and renders them dynamically.
 // Each product card links to product-detail.html?id=<product_id>
 
+let ALL_PRODUCTS = [];
+
+const categoryMap = {
+  keyboard: "keyboard",
+  mouse: "mouse",
+  keycap: "keycap",
+  switch: "switch",
+  phu_kien: "phu_kien"
+};
+
 async function loadProducts() {
   try {
     const response = await fetch('../data/products.json');
-    if (!response.ok) throw new Error('Failed to load products.json');
     const products = await response.json();
-    renderProducts(products);
+
+    ALL_PRODUCTS = products;
+
+    showCategory("keyboard");
+
   } catch (err) {
-    console.error('Could not load products:', err);
+    console.error(err);
   }
 }
 
-function renderProducts(products) {
-  const grouped = {};
-  products.forEach(product => {
-    const cat = product.category || 'other';
-    if (!grouped[cat]) grouped[cat] = [];
-    grouped[cat].push(product);
-  });
+function renderProducts(products, filterCategory = null) {
+  const sections = document.querySelectorAll('.product-section');
+  sections.forEach(s => s.innerHTML = "");
 
-  Object.keys(grouped).forEach(category => {
-    const section = document.getElementById(category);
+  products.forEach(product => {
+
+    if (filterCategory && product.category !== filterCategory) return;
+
+    const sectionId = categoryMap[product.category];
+    const section = document.getElementById(sectionId);
     if (!section) return;
 
-    let html = `<div class="product-grid">`;
+    const discount = product.originalPrice
+      ? Math.round((1 - product.price / product.originalPrice) * 100)
+      : null;
 
-    grouped[category].forEach(product => {
-      const discount = product.originalPrice
-        ? Math.round((1 - product.price / product.originalPrice) * 100)
-        : null;
-
-      html += `
-        <a class="product-card-link" href="../html/product-detail.html?id=${encodeURIComponent(product.id)}">
-          <div class="product-card">
-            ${discount ? `<div class="product-badge">-${discount}%</div>` : ''}
-            <div class="product-card-image">
-              <img src="..${product.image}" alt="${escapeHtml(product.name)}" loading="lazy" />
-            </div>
-            <div class="product-card-body">
-              <h5 class="product-card-title">${escapeHtml(product.name)}</h5>
-              <div class="product-card-price">
-                ${product.originalPrice
-                  ? `<span class="price-old">${formatPrice(product.originalPrice)}₫</span>`
-                  : ''}
-                <span class="price-new">${formatPrice(product.price)}₫</span>
-              </div>
+    const html = `
+      <a class="product-card-link" href="../html/product-detail.html?id=${encodeURIComponent(product.id)}">
+        <div class="product-card">
+          ${discount ? `<div class="product-badge">-${discount}%</div>` : ''}
+          <div class="product-card-image">
+            <img src="${product.image}" alt="${escapeHtml(product.name)}" loading="lazy" />
+          </div>
+          <div class="product-card-body">
+            <h5 class="product-card-title">${escapeHtml(product.name)}</h5>
+            <div class="product-card-price">
+              ${product.originalPrice
+                ? `<span class="price-old">${formatPrice(product.originalPrice)}₫</span>`
+                : ''}
+              <span class="price-new">${formatPrice(product.price)}₫</span>
             </div>
           </div>
-        </a>
-      `;
-    });
-
-    html += `</div>`;
+        </div>
+      </a>
+    `;
 
     section.insertAdjacentHTML('beforeend', html);
   });
@@ -86,12 +93,17 @@ function escapeHtml(str) {
 // Show/hide section by category (called from nav links)
 function showCategory(categoryId) {
   const sections = document.querySelectorAll('.product-section');
-  sections.forEach(s => s.style.display = 'none');
+  sections.forEach(s => {
+    s.style.display = 'none';
+    s.innerHTML = "";
+  });
+
   const target = document.getElementById(categoryId);
-  if (target) {
-    target.style.display = 'block';
-    target.scrollIntoView({ behavior: 'smooth' });
-  }
+  if (!target) return;
+
+  target.style.display = 'grid';
+
+  renderProducts(ALL_PRODUCTS, categoryId);
 }
 
 // On page load

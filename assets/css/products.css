@@ -269,11 +269,6 @@ main {
     color: #888;
 }
 
-/* Ẩn tất cả */
-.product-section {
-    display: none;
-}
-
 /* Hiện bằng JS */
 .product-section.active {
     display: grid;
@@ -282,7 +277,7 @@ main {
 }
 
 /* Mặc định hiện keyboard khi chưa click */
-.product-section:first-of-type {
+.product-section {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;

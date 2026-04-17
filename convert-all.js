@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 // ====== CONFIG ======
-const ROOT_DIR = '../assets/images/keyboard';
+const ROOT_DIR = './assets/images/Tai nghe';
 const OUTPUT_FILE = 'products.json';
 
 // ====== PARSE GIÁ ======
@@ -19,11 +19,16 @@ function parseGia(text) {
     l.toLowerCase().includes('khuyến mãi')
   );
 
-  const promotions = promoIndex !== -1
-    ? lines.slice(promoIndex + 1)
-    : [];
+  const promotions = promoIndex !== -1 ?
+    lines.slice(promoIndex + 1) :
+    [];
 
-  return { name, price, originalPrice, promotions };
+  return {
+    name,
+    price,
+    originalPrice,
+    promotions
+  };
 }
 
 // ====== PARSE SPECS ======
@@ -64,9 +69,9 @@ folders.forEach(folder => {
 
     const giaFile = files.find(f => f.toLowerCase().includes('gia'));
     const dataFile = files.find(f => f.toLowerCase().includes('data'));
-    const imageFile = files.find(f =>
-      f.match(/\.(png|jpg|jpeg|webp)$/i)
-    );
+    const imageFile = files
+      .filter(f => /\.(png|jpg|jpeg|webp)$/i.test(f.trim()))
+      .sort()[0];
 
     if (!giaFile || !dataFile || !imageFile) {
       console.log(`Thiếu file trong: ${folder}`);
@@ -86,8 +91,8 @@ folders.forEach(folder => {
       name: gia.name,
       price: gia.price,
       originalPrice: gia.originalPrice,
-      image: `assets/images/keyboard/${folder}/${imageFile}`,
-      category: "keyboard",
+      image: `/assets/images/Tai nghe/${folder}/${imageFile}`,
+      category: "phu_kien",
       description: gia.name,
       promotions: gia.promotions,
       specs

@@ -108,6 +108,15 @@
     color: #ed1c24;
 }
 
+.product-section {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.product-section:last-child {
+    border-bottom: none;
+}
+
 /* ── Product not found ──────────────────────────────────────── */
 .product-not-found {
     padding: 60px 20px;

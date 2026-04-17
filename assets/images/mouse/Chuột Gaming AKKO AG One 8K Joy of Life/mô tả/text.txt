@@ -1,0 +1,9 @@
+AKKO AG One 8K Joy of Life: Phiên bản giới hạn được lấy cảm hứng từ phim cổ trang “Joy of Life”
+
+Model Type	AG ONE
+Polling Rate	8K polling rate for both 2.4G and USB modes
+DPI Levels	8 adjustable DPI levels ranging from 400 to 26000
+Sensor	PAW3395
+Pin	500mAh
+Size	125*67*37mm
+Weight	65g

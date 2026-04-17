@@ -1,0 +1,12 @@
+Thiết kế công thái học cho người thuận tay phải
+Mắt đọc PWM3325
+Giao tiếp USB, dây cáp dài 1,5m
+Vỏ nhựa ABS
+Switch Omron (50 triệu lần nhấn)
+Số nút: 7
+Hỗ trợ macro, tùy chỉnh được thông qua phần mềm driver riêng
+Kích thước: 123x68x39 mm
+DPI: 200/800/1000/1500/2000/2500 và có thể lên được tối đa 5,000 (mức DPI 10,000 cũng có thể đạt được thông qua phần mềm DRIVER tuy nhiên nhà sản xuất khuyến cáo người dùng chỉ nên để mức tối đa 5,000 DPI)
+Polling Rate: 125/250/500/1000 Hz
+Trọng lượng: 113g (tính dây) và 78g (không tính dây)
+Đèn LED RGB có thể điều chỉnh được thông qua phần mềm DRIVER
