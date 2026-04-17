@@ -108,10 +108,10 @@ function renderProductDetail(product, container) {
           </div>
 
           <div class="quantity-container">
-            <button type="button" class="button minus" onclick="changeQty(-1)">-</button>
+            <button type="button" class="button minus">-</button>
             <label for="qty-input">Số lượng sản phẩm</label>
             <input type="number" step="1" min="1" value="1" class="qty-input" id="qty-input" />
-            <button type="button" class="button plus" onclick="changeQty(1)">+</button>
+            <button type="button" class="button plus">+</button>
           </div>
 
           <div class="cart-container">
@@ -180,6 +180,22 @@ function renderProductDetail(product, container) {
     </div>
   `;
 
+  const qtyContainer = container.querySelector('.quantity-container');
+
+  const minusBtn = qtyContainer.querySelector('.minus');
+  const plusBtn = qtyContainer.querySelector('.plus');
+  const input = qtyContainer.querySelector('.qty-input');
+
+  minusBtn.addEventListener('click', () => {
+    const newVal = Math.max(1, parseInt(input.value || 1) - 1);
+    input.value = newVal;
+  });
+
+  plusBtn.addEventListener('click', () => {
+    const newVal = Math.max(1, parseInt(input.value || 1) + 1);
+    input.value = newVal;
+  });
+
   container.addEventListener('click', (e) => {
     if (e.target.closest('.add-to-cart-btn')) {
       console.log("CLICKED");
@@ -197,15 +213,8 @@ function renderProductDetail(product, container) {
     }
   });
 
-  
-  renderReviews(product.id);
-}
 
-function changeQty(delta) {
-  const input = document.getElementById('qty-input');
-  if (!input) return;
-  const newVal = Math.max(1, parseInt(input.value || 1) + delta);
-  input.value = newVal;
+  renderReviews(product.id);
 }
 
 function getCategoryLabel(key) {

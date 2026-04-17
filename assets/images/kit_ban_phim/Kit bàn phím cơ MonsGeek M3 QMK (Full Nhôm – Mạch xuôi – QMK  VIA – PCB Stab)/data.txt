@@ -1,0 +1,9 @@
+MonsGeek M3 QMK là kit bàn phím cơ hứa hẹn sẽ rất hot trong tầm giá dưới 3 triệu Đồng nhờ các tính năng sau:
+
+Full nhôm với 3 màu tùy chọn với build chắc chắn, nặng và đầm
+Hotswap 5 pin, có LED RGB và mạch xuôi
+Gasket Mount / Layout TKL rất gọn gàng và dễ làm quen, dễ chơi keycap
+Full foam đi kèm (Plate / Switch / Case) và bổ sung thêm Sticker (Tape Mode) và Teflon Pads (Force Break)
+Đi kèm PCB Stab của AKKO và cả dây xoắn
+Hỗ trợ QMK/VIA giúp tăng khả năng tùy biến
+Giá bán hot nhất phân khúc FULL NHÔM và Layout TKL

@@ -6,6 +6,7 @@ let ALL_PRODUCTS = [];
 
 const categoryMap = {
   keyboard: "keyboard",
+  kit_ban_phim: "kit_ban_phim",
   mouse: "mouse",
   keycap: "keycap",
   switch: "switch",

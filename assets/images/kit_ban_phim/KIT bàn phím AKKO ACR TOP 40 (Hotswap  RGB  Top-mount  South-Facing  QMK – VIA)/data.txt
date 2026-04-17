@@ -1,0 +1,7 @@
+AKKO ACR TOP 40 là KIT bàn phím layout 40% chính hãng gần như duy nhất trên thị trường và hứa hẹn sẽ rất hot nhờ các ưu điểm dưới đây:
+
+Case ACR CNC 2 lớp rất đẹp và có LED gầm
+Layout nhỏ gọn 40% rất tiện mang vác đi lại
+Có hotswap / RGB và cấu trúc top-mount giúp âm gõ đặc biệt hơn
+Hỗ trợ QMK / VIA giúp người dùng keymap phím dễ dàng
+Giá thành không quá cao, rất dễ tiếp cận và sẽ stock sẵn với số lượng giới hạn nên người dùng có thể dễ dàng đặt mua

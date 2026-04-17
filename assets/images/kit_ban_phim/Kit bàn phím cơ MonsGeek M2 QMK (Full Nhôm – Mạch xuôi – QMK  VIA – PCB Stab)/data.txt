@@ -1,0 +1,9 @@
+MonsGeek M2 QMK là kit bàn phím cơ hứa hẹn sẽ rất hot trong tầm giá dưới 3 triệu Đồng nhờ các tính năng sau:
+
+Full nhôm với 3 màu tùy chọn nặng và đầm
+Hotswap 5 pin, có LED RGB và mạch xuôi
+Gasket Mount / Layout 98% – 1800 rất gọn gàng mà vẫn đủ phím số bên phải
+Full foam đi kèm (Plate / Switch / Case) và bổ sung thêm Sticker (Tape Mode) và Teflon Pads (Force Break)
+Đi kèm PCB Stab của AKKO và cả dây xoắn
+Hỗ trợ QMK/VIA giúp tăng khả năng tùy biến
+Giá bán hot nhất phân khúc FULL NHÔM và Layout 98

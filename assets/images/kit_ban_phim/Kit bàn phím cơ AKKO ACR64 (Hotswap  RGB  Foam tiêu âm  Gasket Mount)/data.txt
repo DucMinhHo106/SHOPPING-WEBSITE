@@ -1,0 +1,14 @@
+Model: 3064 (64 keys)
+Màu sắc: Black (Đen) – White (Trắng)
+LED nền RGB (6028 SMD LED) với nhiều chế độ
+Kích thước: 310x120x25 mm | Trọng lượng 0.23kg
+Vỏ case: Acrylic – Laser – CNC – Sơn
+Plate PC, tích hợp sẵn Gasket Mount (3.0mm EVA với mật độ cao)
+Kết nối: USB Type-C 2 Type-A (Hỗ trợ Type-C 2 Type-C)
+Hỗ trợ NKRO / Multimedia / Macro / Khóa phím windows
+Tích hợp sẵn foam tiêu âm EVA 3.5mm PCB
+Hotswap 5 pin TTC socket, stab có sẵn (dạng plate mount)
+Phụ kiện: 1 sách hướng dẫn sử dụng + 1 dây xoắn USB Type-C to USB (màu hợp với màu vỏ case)
+Tương thích: Windows / MacOS / Linux
+Bàn phím AKKO khi kết nối với MacOS: (Ctrl -> Control | Windows -> Command | Alt -> Option, Mojave OS trở lên sẽ điều chỉnh được thứ tự của các phím này)
+*Lưu ý: Sản phẩm này không bao gồm keycap và switch, stab đã có sẵn. Kit sẽ có sẵn 2 switch AKKO ở góc trên cùng bên trái và dưới cùng bên phải cố định vị trí.

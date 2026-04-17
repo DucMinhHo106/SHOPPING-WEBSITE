@@ -3,6 +3,8 @@
     background-color: #7a7a7a;
     color: #fff;
     font-size: 14px;
+    position: relative;
+    bottom: 0;
 }
 
 .footer-title {

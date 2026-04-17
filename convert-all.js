@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 // ====== CONFIG ======
-const ROOT_DIR = './assets/images/Tai nghe';
+const ROOT_DIR = './assets/images/switch';
 const OUTPUT_FILE = 'products.json';
 
 // ====== PARSE GIÁ ======
@@ -91,8 +91,8 @@ folders.forEach(folder => {
       name: gia.name,
       price: gia.price,
       originalPrice: gia.originalPrice,
-      image: `/assets/images/Tai nghe/${folder}/${imageFile}`,
-      category: "phu_kien",
+      image: `/assets/images/switch/${folder}/${imageFile}`,
+      category: "switch",
       description: gia.name,
       promotions: gia.promotions,
       specs
