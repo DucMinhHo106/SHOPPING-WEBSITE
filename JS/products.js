@@ -21,8 +21,10 @@ async function loadProducts() {
 
     ALL_PRODUCTS = products;
     isLoaded = true;
-    showCategory("keyboard");
+    const params = new URLSearchParams(window.location.search);
+    const category = params.get("category") || "keyboard";
 
+    showCategory(category);
   } 
   catch (err) {
     console.error(err);
