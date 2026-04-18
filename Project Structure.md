@@ -33,7 +33,8 @@ SHOPPING-WEBSITE/
 │   ├── cart.html
 │   ├── contact.html
 │   ├── product-detail.html
-│   ├── products.html
-│   └── index.html
+│   └── products.html
+│
+├── index.html
 │
 └── Project Structure.md
