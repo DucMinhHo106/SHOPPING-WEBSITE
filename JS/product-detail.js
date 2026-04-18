@@ -1,5 +1,5 @@
 // assets/js/product-detail.js
-// Reads ?id= from URL, fetches /data/products.json, finds and renders the product.
+// Reads ?id= from URL, fetches /IMG/data/products.json, finds and renders the product.
 
 async function loadProductDetail() {
   const params = new URLSearchParams(window.location.search);
@@ -14,7 +14,7 @@ async function loadProductDetail() {
   }
 
   try {
-    const response = await fetch('../data/products.json');
+    const response = await fetch('../IMG/data/products.json');
     if (!response.ok) throw new Error('Network error');
     const products = await response.json();
 

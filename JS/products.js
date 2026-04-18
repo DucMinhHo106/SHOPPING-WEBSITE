@@ -1,8 +1,9 @@
 // assets/js/products.js
-// Fetches products from /data/products.json and renders them dynamically.
+// Fetches products from /IMG/data/products.json and renders them dynamically.
 // Each product card links to product-detail.html?id=<product_id>
 
 let ALL_PRODUCTS = [];
+let isLoaded = false;
 
 const categoryMap = {
   keyboard: "keyboard",
@@ -15,14 +16,15 @@ const categoryMap = {
 
 async function loadProducts() {
   try {
-    const response = await fetch('../data/products.json');
+    const response = await fetch('../IMG/data/products.json');
     const products = await response.json();
 
     ALL_PRODUCTS = products;
-
+    isLoaded = true;
     showCategory("keyboard");
 
-  } catch (err) {
+  } 
+  catch (err) {
     console.error(err);
   }
 }
@@ -93,6 +95,8 @@ function escapeHtml(str) {
 
 // Show/hide section by category (called from nav links)
 function showCategory(categoryId) {
+  if (!isLoaded) return;
+
   const sections = document.querySelectorAll('.product-section');
   sections.forEach(s => {
     s.style.display = 'none';
