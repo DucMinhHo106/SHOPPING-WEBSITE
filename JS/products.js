@@ -48,7 +48,7 @@ function renderProducts(products, filterCategory = null) {
       : null;
 
     const html = `
-      <a class="product-card-link" href="../html/product-detail.html?id=${encodeURIComponent(product.id)}">
+      <a class="product-card-link" href="../HTML/product-detail.html?id=${encodeURIComponent(product.id)}">
         <div class="product-card">
           ${discount ? `<div class="product-badge">-${discount}%</div>` : ''}
           <div class="product-card-image">

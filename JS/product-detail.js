@@ -80,7 +80,7 @@ function renderProductDetail(product, container) {
           <nav class="breadcrumb-list">
             <a href="../index.html">Trang chủ</a>
             <span class="divider">/</span>
-            <a href="../html/products.html">${escapeHtml(getCategoryLabel(product.category))}</a>
+            <a href="../HTML/products.html">${escapeHtml(getCategoryLabel(product.category))}</a>
           </nav>
 
           <h1 class="product-title">${escapeHtml(product.name)}</h1>
@@ -121,7 +121,7 @@ function renderProductDetail(product, container) {
           </div>
 
           <div class="category-info">
-            <span>Danh mục: <a href="../html/products.html#${product.category}">${escapeHtml(getCategoryLabel(product.category))}</a></span>
+            <span>Danh mục: <a href="../HTML/products.html#${product.category}">${escapeHtml(getCategoryLabel(product.category))}</a></span>
           </div>
         </div>
       </div>
