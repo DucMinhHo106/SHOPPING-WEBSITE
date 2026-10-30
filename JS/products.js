@@ -22,7 +22,7 @@ async function loadProducts() {
     ALL_PRODUCTS = products;
     isLoaded = true;
     const params = new URLSearchParams(window.location.search);
-    const category = params.get("category") || "keyboard";
+    const category = params.get("category") || window.location.hash.slice(1) || "keyboard";
 
     showCategory(category);
   } 

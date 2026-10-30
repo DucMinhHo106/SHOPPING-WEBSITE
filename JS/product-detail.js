@@ -121,7 +121,7 @@ function renderProductDetail(product, container) {
           </div>
 
           <div class="category-info">
-            <span>Danh mục: <a href="../HTML/products.html#${product.category}">${escapeHtml(getCategoryLabel(product.category))}</a></span>
+            <span>Danh mục: <a href="../HTML/products.html?category=${encodeURIComponent(product.category)}">${escapeHtml(getCategoryLabel(product.category))}</a></span>
           </div>
         </div>
       </div>
