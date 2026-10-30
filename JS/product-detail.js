@@ -268,9 +268,9 @@ function renderReviews(productId) {
 
       return `
         <div class="review-item">
-          <strong>${r.name}</strong>
+          <strong>${escapeHtml(r.name)}</strong>
           <div>${stars}</div>
-          <p>${r.content}</p>
+          <p>${escapeHtml(r.content)}</p>
         </div>
       `;
     }).join('');

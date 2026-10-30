@@ -25,6 +25,8 @@ async function loadProducts() {
     const category = params.get("category") || window.location.hash.slice(1) || "keyboard";
 
     showCategory(category);
+    const searchInput = document.getElementById('product-search');
+    searchInput?.addEventListener('input', () => filterCurrentCategory(searchInput.value));
   } 
   catch (err) {
     console.error(err);
@@ -113,5 +115,16 @@ function showCategory(categoryId) {
   renderProducts(ALL_PRODUCTS, categoryId);
 }
 
+function filterCurrentCategory(query) {
+  const activeSection = [...document.querySelectorAll('.product-section')].find(section => section.style.display !== 'none');
+  if (!activeSection) return;
+  const normalizedQuery = query.trim().toLocaleLowerCase('vi');
+  const filtered = ALL_PRODUCTS.filter(product => product.category === activeSection.id &&
+    `${product.name} ${getCategoryLabel(product.category)}`.toLocaleLowerCase('vi').includes(normalizedQuery));
+  renderProducts(filtered, activeSection.id);
+  if (filtered.length === 0) {
+    activeSection.innerHTML = '<p class="no-results">Không tìm thấy sản phẩm phù hợp.</p>';
+  }
+}
 // On page load
 document.addEventListener('DOMContentLoaded', loadProducts);
