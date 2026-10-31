@@ -14,7 +14,7 @@ async function loadProductDetail() {
   }
 
   try {
-    const response = await fetch('../IMG/data/products.json');
+    const response = await fetch('../IMG/data/products.json?v=akko-20261031');
     if (!response.ok) throw new Error('Network error');
     const products = await response.json();
 

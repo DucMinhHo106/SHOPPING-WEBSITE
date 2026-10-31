@@ -16,7 +16,7 @@ const categoryMap = {
 
 async function loadProducts() {
   try {
-    const response = await fetch('../IMG/data/products.json');
+    const response = await fetch('../IMG/data/products.json?v=akko-20261031');
     const products = await response.json();
 
     ALL_PRODUCTS = products;
