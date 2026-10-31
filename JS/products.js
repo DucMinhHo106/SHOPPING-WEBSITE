@@ -37,19 +37,33 @@ function renderProducts(products, filterCategory = null) {
   const sections = document.querySelectorAll('.product-section');
   sections.forEach(s => s.innerHTML = "");
 
-  products.forEach(product => {
+  const productsByCategory = new Map();
+  products
+    .filter(product => !filterCategory || product.category === filterCategory)
+    .forEach(product => {
+      if (!categoryMap[product.category]) return;
+      if (!productsByCategory.has(product.category)) productsByCategory.set(product.category, []);
+      productsByCategory.get(product.category).push(product);
+    });
 
-    if (filterCategory && product.category !== filterCategory) return;
-
-    const sectionId = categoryMap[product.category];
-    const section = document.getElementById(sectionId);
+  productsByCategory.forEach((categoryProducts, category) => {
+    const section = document.getElementById(categoryMap[category]);
     if (!section) return;
 
-    const discount = product.originalPrice
-      ? Math.round((1 - product.price / product.originalPrice) * 100)
-      : null;
+    const available = categoryProducts.filter(product => product.inStock !== false);
+    const unavailable = categoryProducts.filter(product => product.inStock === false);
+    const orderedProducts = [...available, ...unavailable];
 
-    const html = `
+    orderedProducts.forEach((product, index) => {
+      if (index === available.length && unavailable.length > 0 && available.length > 0) {
+        section.insertAdjacentHTML('beforeend', '<div class="product-stock-divider" role="separator" aria-label="Sản phẩm hết hàng"><span>Sản phẩm hết hàng</span></div>');
+      }
+
+      const discount = product.originalPrice
+        ? Math.round((1 - product.price / product.originalPrice) * 100)
+        : null;
+
+      const html = `
       <a class="product-card-link" href="../HTML/product-detail.html?id=${encodeURIComponent(product.id)}">
         <div class="product-card">
           ${discount ? `<div class="product-badge">-${discount}%</div>` : ''}
@@ -70,7 +84,8 @@ function renderProducts(products, filterCategory = null) {
       </a>
     `;
 
-    section.insertAdjacentHTML('beforeend', html);
+      section.insertAdjacentHTML('beforeend', html);
+    });
   });
 }
 
