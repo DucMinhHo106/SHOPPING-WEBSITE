@@ -53,6 +53,7 @@ function renderProducts(products, filterCategory = null) {
       <a class="product-card-link" href="../HTML/product-detail.html?id=${encodeURIComponent(product.id)}">
         <div class="product-card">
           ${discount ? `<div class="product-badge">-${discount}%</div>` : ''}
+          <span class="product-stock ${product.inStock === false ? 'out' : 'in'}">${product.inStock === false ? 'Hết hàng' : 'Còn hàng'}</span>
           <div class="product-card-image">
             <img src="..${product.image}" alt="${escapeHtml(product.name)}" loading="lazy" />
           </div>

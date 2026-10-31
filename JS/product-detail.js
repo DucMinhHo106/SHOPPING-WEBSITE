@@ -107,21 +107,23 @@ function renderProductDetail(product, container) {
               : ''}
           </div>
 
+          <p class="product-stock-detail ${product.inStock === false ? 'out' : 'in'}">${product.inStock === false ? 'Hiện đã hết hàng' : 'Hiện còn hàng'}</p>
           <div class="quantity-container">
-            <button type="button" class="button minus">-</button>
+            <button type="button" class="button minus" ${product.inStock === false ? 'disabled' : ''}>-</button>
             <label for="qty-input">Số lượng sản phẩm</label>
-            <input type="number" step="1" min="1" value="1" class="qty-input" id="qty-input" />
-            <button type="button" class="button plus">+</button>
+            <input type="number" step="1" min="1" value="1" class="qty-input" id="qty-input" ${product.inStock === false ? 'disabled' : ''} />
+            <button type="button" class="button plus" ${product.inStock === false ? 'disabled' : ''}>+</button>
           </div>
 
           <div class="cart-container">
-            <button type="button" class="add-to-cart-btn">
-              <p class="add-to-cart-text">Thêm vào giỏ hàng</p>
+            <button type="button" class="add-to-cart-btn" ${product.inStock === false ? 'disabled' : ''}>
+              <p class="add-to-cart-text">${product.inStock === false ? 'Hết hàng' : 'Thêm vào giỏ hàng'}</p>
             </button>
           </div>
 
           <div class="category-info">
             <span>Danh mục: <a href="../HTML/products.html?category=${encodeURIComponent(product.category)}">${escapeHtml(getCategoryLabel(product.category))}</a></span>
+            ${product.sourceUrl ? `<br><a href="${escapeHtml(product.sourceUrl)}" target="_blank" rel="noopener">Xem tình trạng mới nhất trên Akko.vn</a>` : ''}
           </div>
         </div>
       </div>
@@ -197,7 +199,7 @@ function renderProductDetail(product, container) {
   });
 
   container.addEventListener('click', (e) => {
-    if (e.target.closest('.add-to-cart-btn')) {
+    if (e.target.closest('.add-to-cart-btn') && product.inStock !== false) {
       console.log("CLICKED");
       alert("Cập nhật giỏ hàng thành công");
       const qty = parseInt(document.getElementById('qty-input').value) || 1;
@@ -207,6 +209,7 @@ function renderProductDetail(product, container) {
         name: product.name,
         price: product.price,
         image: product.image,
+        inStock: product.inStock,
         quantity: qty
       });
       console.log("AFTER ADD:", getCart());
